@@ -5,7 +5,7 @@
 #规则来自blackmatrix7大佬：https://github.com/blackmatrix7/ios_rule_script/tree/master/rule
 #使用方法：
 #第一步：将此界面所有代码复制到本地用文本编辑器(记事本/Notepad++等)打开，一般是Ctrl+H组合键调出替换窗口，将“离港机场名字01”全部替换成你的机场名字即可
-#第二步:将68行和78行中url换成你的机场clash订阅后导入clash即可！
+#第二步:将68行中url换成你的机场clash订阅后导入clash即可！
 
 port: 7890
 socks-port: 7891
@@ -73,16 +73,6 @@ proxy-providers:
       interval: 600
       url: https://www.gstatic.com/generate_204
 
-  离港机场名字02_Subscription:
-    type: http
-    url: "你的第二个机场clash订阅"
-    interval: 86400
-    path: ./providers/proxy/离港机场名字02.yaml
-    health-check:
-      enable: true
-      interval: 600
-      url: https://www.gstatic.com/generate_204
-
 #clah  p核正则
 #   (A).*(B)         节点名既有 A 也有 B 
 #   (A)|(B)          节点名有 A 或者 B   
@@ -141,55 +131,6 @@ proxy-providers:
        url: https://www.gstatic.com/generate_204
 
 
-#离港机场名字02部分
-  离港机场名字02_Filter_All:
-     type: file
-     path: ./providers/proxy/离港机场名字02.yaml
-     health-check:
-       enable: true
-       interval: 600
-       url: https://www.gstatic.com/generate_204
-  离港机场名字02_Filter_HK:
-     filter: 香港|🇭🇰|HK|(?i)Hong
-     type: file
-     path: ./providers/proxy/离港机场名字02.yaml
-     health-check:
-       enable: true
-       interval: 600
-       url: https://www.gstatic.com/generate_204
-  离港机场名字02_Filter_TW:
-     filter: 台湾|🇹🇼|TW|(?i)Taiwan
-     type: file
-     path: ./providers/proxy/离港机场名字02.yaml
-     health-check:
-       enable: true
-       interval: 600
-       url: https://www.gstatic.com/generate_204
-  离港机场名字02_Filter_SG:
-     filter: 狮|🇸🇬|加坡|SG|(?i)Singapore
-     type: file
-     path: ./providers/proxy/离港机场名字02.yaml
-     health-check:
-       enable: true
-       interval: 600
-       url: https://www.gstatic.com/generate_204
-  离港机场名字02_Filter_US:
-     filter: 美国|🇺🇸|US|(?i)States|American
-     type: file
-     path: ./providers/proxy/离港机场名字02.yaml
-     health-check:
-       enable: true
-       interval: 600
-       url: https://www.gstatic.com/generate_204
-  离港机场名字02_Filter_JP:
-     filter: 日本|🇯🇵|东京|JP|(?i)Japan
-     type: file
-     path: ./providers/proxy/离港机场名字02.yaml
-     health-check:
-       enable: true
-       interval: 600
-       url: https://www.gstatic.com/generate_204
-
 #策略分组
 proxy-groups:
   - name: Final_Match
@@ -197,7 +138,6 @@ proxy-groups:
     proxies:        
       - DIRECT
       - 离港机场名字01
-      - 离港机场名字02
       - 离港机场名字01♡香港节点(Fallback)
       - 离港机场名字01♡美国节点(Fallback)
       - 离港机场名字01♡香港节点
@@ -205,16 +145,8 @@ proxy-groups:
       - 离港机场名字01♡新加坡节点
       - 离港机场名字01♡美国节点
       - 离港机场名字01♡日本节点
-      - 离港机场名字02♡香港节点(Fallback)
-      - 离港机场名字02♡美国节点(Fallback)
-      - 离港机场名字02♡香港节点
-      - 离港机场名字02♡台湾节点
-      - 离港机场名字02♡新加坡节点
-      - 离港机场名字02♡美国节点
-      - 离港机场名字02♡日本节点
     use:        
       - 离港机场名字01_Filter_All
-      - 离港机场名字02_Filter_All
 
   - name: 离港机场名字01
     type: select
@@ -230,25 +162,10 @@ proxy-groups:
     use:        
       - 离港机场名字01_Filter_All
 
-  - name: 离港机场名字02
-    type: select
-    proxies:        
-      - DIRECT
-      - 离港机场名字02♡香港节点(Fallback)
-      - 离港机场名字02♡美国节点(Fallback)
-      - 离港机场名字02♡香港节点
-      - 离港机场名字02♡台湾节点
-      - 离港机场名字02♡新加坡节点
-      - 离港机场名字02♡美国节点
-      - 离港机场名字02♡日本节点
-    use:        
-      - 离港机场名字02_Filter_All
-
   - name: Telegram
     type: select
     proxies:        
       - 离港机场名字01
-      - 离港机场名字02
       - 离港机场名字01♡香港节点(Fallback)
       - 离港机场名字01♡美国节点(Fallback)
       - 离港机场名字01♡香港节点
@@ -256,22 +173,13 @@ proxy-groups:
       - 离港机场名字01♡新加坡节点
       - 离港机场名字01♡美国节点
       - 离港机场名字01♡日本节点
-      - 离港机场名字02♡香港节点(Fallback)
-      - 离港机场名字02♡美国节点(Fallback)
-      - 离港机场名字02♡香港节点
-      - 离港机场名字02♡台湾节点
-      - 离港机场名字02♡新加坡节点
-      - 离港机场名字02♡美国节点
-      - 离港机场名字02♡日本节点
     use:        
       - 离港机场名字01_Filter_All
-      - 离港机场名字02_Filter_All
 
   - name: YouTube
     type: select
     proxies:        
       - 离港机场名字01
-      - 离港机场名字02
       - 离港机场名字01♡香港节点(Fallback)
       - 离港机场名字01♡美国节点(Fallback)
       - 离港机场名字01♡香港节点
@@ -279,23 +187,14 @@ proxy-groups:
       - 离港机场名字01♡新加坡节点
       - 离港机场名字01♡美国节点
       - 离港机场名字01♡日本节点
-      - 离港机场名字02♡香港节点(Fallback)
-      - 离港机场名字02♡美国节点(Fallback)
-      - 离港机场名字02♡香港节点
-      - 离港机场名字02♡台湾节点
-      - 离港机场名字02♡新加坡节点
-      - 离港机场名字02♡美国节点
-      - 离港机场名字02♡日本节点
     use:        
       - 离港机场名字01_Filter_All
-      - 离港机场名字02_Filter_All
 
 
   - name: Google
     type: select
     proxies:        
       - 离港机场名字01
-      - 离港机场名字02
       - 离港机场名字01♡香港节点(Fallback)
       - 离港机场名字01♡美国节点(Fallback)
       - 离港机场名字01♡香港节点
@@ -303,23 +202,14 @@ proxy-groups:
       - 离港机场名字01♡新加坡节点
       - 离港机场名字01♡美国节点
       - 离港机场名字01♡日本节点
-      - 离港机场名字02♡香港节点(Fallback)
-      - 离港机场名字02♡美国节点(Fallback)
-      - 离港机场名字02♡香港节点
-      - 离港机场名字02♡台湾节点
-      - 离港机场名字02♡新加坡节点
-      - 离港机场名字02♡美国节点
-      - 离港机场名字02♡日本节点
     use:        
       - 离港机场名字01_Filter_All
-      - 离港机场名字02_Filter_All
 
   - name: Download
     type: select
     proxies:        
       - DIRECT
       - 离港机场名字01
-      - 离港机场名字02
       - 离港机场名字01♡香港节点(Fallback)
       - 离港机场名字01♡美国节点(Fallback)
       - 离港机场名字01♡香港节点
@@ -327,22 +217,13 @@ proxy-groups:
       - 离港机场名字01♡新加坡节点
       - 离港机场名字01♡美国节点
       - 离港机场名字01♡日本节点
-      - 离港机场名字02♡香港节点(Fallback)
-      - 离港机场名字02♡美国节点(Fallback)
-      - 离港机场名字02♡香港节点
-      - 离港机场名字02♡台湾节点
-      - 离港机场名字02♡新加坡节点
-      - 离港机场名字02♡美国节点
-      - 离港机场名字02♡日本节点
     use:        
       - 离港机场名字01_Filter_All
-      - 离港机场名字02_Filter_All
 
   - name: Netflix
     type: select
     proxies:        
       - 离港机场名字01
-      - 离港机场名字02
       - 离港机场名字01♡香港节点(Fallback)
       - 离港机场名字01♡美国节点(Fallback)
       - 离港机场名字01♡香港节点
@@ -350,22 +231,13 @@ proxy-groups:
       - 离港机场名字01♡新加坡节点
       - 离港机场名字01♡美国节点
       - 离港机场名字01♡日本节点
-      - 离港机场名字02♡香港节点(Fallback)
-      - 离港机场名字02♡美国节点(Fallback)
-      - 离港机场名字02♡香港节点
-      - 离港机场名字02♡台湾节点
-      - 离港机场名字02♡新加坡节点
-      - 离港机场名字02♡美国节点
-      - 离港机场名字02♡日本节点
     use:        
       - 离港机场名字01_Filter_All
-      - 离港机场名字02_Filter_All
 
   - name: Disney
     type: select
     proxies:        
       - 离港机场名字01
-      - 离港机场名字02
       - 离港机场名字01♡香港节点(Fallback)
       - 离港机场名字01♡美国节点(Fallback)
       - 离港机场名字01♡香港节点
@@ -373,22 +245,13 @@ proxy-groups:
       - 离港机场名字01♡新加坡节点
       - 离港机场名字01♡美国节点
       - 离港机场名字01♡日本节点
-      - 离港机场名字02♡香港节点(Fallback)
-      - 离港机场名字02♡美国节点(Fallback)
-      - 离港机场名字02♡香港节点
-      - 离港机场名字02♡台湾节点
-      - 离港机场名字02♡新加坡节点
-      - 离港机场名字02♡美国节点
-      - 离港机场名字02♡日本节点
     use:        
       - 离港机场名字01_Filter_All
-      - 离港机场名字02_Filter_All
 
   - name: HBO
     type: select
     proxies:        
       - 离港机场名字01
-      - 离港机场名字02
       - 离港机场名字01♡香港节点(Fallback)
       - 离港机场名字01♡美国节点(Fallback)
       - 离港机场名字01♡香港节点
@@ -396,21 +259,12 @@ proxy-groups:
       - 离港机场名字01♡新加坡节点
       - 离港机场名字01♡美国节点
       - 离港机场名字01♡日本节点
-      - 离港机场名字02♡香港节点(Fallback)
-      - 离港机场名字02♡美国节点(Fallback)
-      - 离港机场名字02♡香港节点
-      - 离港机场名字02♡台湾节点
-      - 离港机场名字02♡新加坡节点
-      - 离港机场名字02♡美国节点
-      - 离港机场名字02♡日本节点
     use:        
       - 离港机场名字01_Filter_All
-      - 离港机场名字02_Filter_All
   - name: OpenAI
     type: select
     proxies:        
       - 离港机场名字01
-      - 离港机场名字02
       - 离港机场名字01♡香港节点(Fallback)
       - 离港机场名字01♡美国节点(Fallback)
       - 离港机场名字01♡香港节点
@@ -418,23 +272,14 @@ proxy-groups:
       - 离港机场名字01♡新加坡节点
       - 离港机场名字01♡美国节点
       - 离港机场名字01♡日本节点
-      - 离港机场名字02♡香港节点(Fallback)
-      - 离港机场名字02♡美国节点(Fallback)
-      - 离港机场名字02♡香港节点
-      - 离港机场名字02♡台湾节点
-      - 离港机场名字02♡新加坡节点
-      - 离港机场名字02♡美国节点
-      - 离港机场名字02♡日本节点
     use:        
       - 离港机场名字01_Filter_All
-      - 离港机场名字02_Filter_All
 
   - name: Emby
     type: select
     proxies:        
       - DIRECT
       - 离港机场名字01
-      - 离港机场名字02
       - 离港机场名字01♡香港节点(Fallback)
       - 离港机场名字01♡美国节点(Fallback)
       - 离港机场名字01♡香港节点
@@ -442,23 +287,14 @@ proxy-groups:
       - 离港机场名字01♡新加坡节点
       - 离港机场名字01♡美国节点
       - 离港机场名字01♡日本节点
-      - 离港机场名字02♡香港节点(Fallback)
-      - 离港机场名字02♡美国节点(Fallback)
-      - 离港机场名字02♡香港节点
-      - 离港机场名字02♡台湾节点
-      - 离港机场名字02♡新加坡节点
-      - 离港机场名字02♡美国节点
-      - 离港机场名字02♡日本节点
     use:        
       - 离港机场名字01_Filter_All
-      - 离港机场名字02_Filter_All
 
   - name: Apple
     type: select
     proxies:        
       - DIRECT
       - 离港机场名字01
-      - 离港机场名字02
       - 离港机场名字01♡香港节点(Fallback)
       - 离港机场名字01♡美国节点(Fallback)
       - 离港机场名字01♡香港节点
@@ -466,23 +302,14 @@ proxy-groups:
       - 离港机场名字01♡新加坡节点
       - 离港机场名字01♡美国节点
       - 离港机场名字01♡日本节点
-      - 离港机场名字02♡香港节点(Fallback)
-      - 离港机场名字02♡美国节点(Fallback)
-      - 离港机场名字02♡香港节点
-      - 离港机场名字02♡台湾节点
-      - 离港机场名字02♡新加坡节点
-      - 离港机场名字02♡美国节点
-      - 离港机场名字02♡日本节点
     use:        
       - 离港机场名字01_Filter_All
-      - 离港机场名字02_Filter_All
 
   - name: Microsoft
     type: select
     proxies:        
       - DIRECT
       - 离港机场名字01
-      - 离港机场名字02
       - 离港机场名字01♡香港节点(Fallback)
       - 离港机场名字01♡美国节点(Fallback)
       - 离港机场名字01♡香港节点
@@ -490,16 +317,8 @@ proxy-groups:
       - 离港机场名字01♡新加坡节点
       - 离港机场名字01♡美国节点
       - 离港机场名字01♡日本节点
-      - 离港机场名字02♡香港节点(Fallback)
-      - 离港机场名字02♡美国节点(Fallback)
-      - 离港机场名字02♡香港节点
-      - 离港机场名字02♡台湾节点
-      - 离港机场名字02♡新加坡节点
-      - 离港机场名字02♡美国节点
-      - 离港机场名字02♡日本节点
     use:        
       - 离港机场名字01_Filter_All
-      - 离港机场名字02_Filter_All
 
 
 #离港机场名字01部分
@@ -550,55 +369,6 @@ proxy-groups:
     proxies:
     use:
       - 离港机场名字01_Filter_JP
-
-#离港机场名字02部分
-  - name: 离港机场名字02♡香港节点(Fallback) #超时自动选择下一个
-    type: fallback
-    url: https://www.gstatic.com/generate_204
-    interval: 60
-    lazy: true
-    proxies:
-    use:
-      - 离港机场名字02_Filter_HK
-
-  - name: 离港机场名字02♡美国节点(Fallback)
-    type: fallback
-    url: https://www.gstatic.com/generate_204
-    interval: 60
-    lazy: true
-    proxies:
-    use:
-      - 离港机场名字02_Filter_US
-
-  - name: 离港机场名字02♡香港节点
-    type: select
-    proxies:
-    use:
-      - 离港机场名字02_Filter_HK
-
-  - name: 离港机场名字02♡台湾节点
-    type: select
-    proxies:
-    use:
-      - 离港机场名字02_Filter_TW
-
-  - name: 离港机场名字02♡新加坡节点
-    type: select
-    proxies:
-    use:
-      - 离港机场名字02_Filter_SG
-
-  - name: 离港机场名字02♡美国节点
-    type: select
-    proxies:
-    use:
-      - 离港机场名字02_Filter_US
-
-  - name: 离港机场名字02♡日本节点
-    type: select
-    proxies:
-    use:
-      - 离港机场名字02_Filter_JP
 
 
 #远程规则集合
