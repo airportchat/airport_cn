@@ -1,0 +1,735 @@
+#####使用前必读######
+
+
+port: 7890
+socks-port: 7891
+redir-port: 7892
+tproxy-port: 7893
+mixed-port: 7890
+allow-lan: true
+bind-address: "*"
+mode: rule
+log-level: info
+external-controller: 127.0.0.1:9090
+profile:
+  store-selected: false
+  tracing: false
+  store-fake-ip: false
+dns:
+  enable: true
+  listen: 0.0.0.0:1053
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  use-hosts: true
+
+  default-nameserver:
+    - 114.114.114.114
+    - 119.29.29.29
+    - 223.5.5.5
+
+  nameserver:
+    - https://doh.pub/dns-query
+    - https://dns.alidns.com/dns-query
+
+  fake-ip-filter:
+    - '*.lan'
+    - localhost.ptlogin2.qq.com
+    - '+.srv.nintendo.net'
+    - '+.stun.playstation.net'
+    - '+.msftconnecttest.com'
+    - '+.msftncsi.com'
+    - '+.xboxlive.com'
+    - 'msftconnecttest.com'
+    - 'xbox.*.microsoft.com'
+    - '*.battlenet.com.cn'
+    - '*.battlenet.com'
+    - '*.blzstatic.cn'
+    - '*.battle.net'
+
+  fallback:
+    - 1.1.1.1
+    - 8.8.8.8
+  fallback-filter:
+    geoip: true
+    geoip-code: CN
+    ipcidr:
+      - 240.0.0.0/4
+
+#远程订阅
+proxy-providers:
+  离港机场名字01_Subscription:
+    type: http
+    url: "你的第一个机场clash订阅"
+    interval: 86400
+    path: ./providers/proxy/离港机场名字01.yaml
+    health-check:
+      enable: true
+      interval: 600
+      url: https://www.gstatic.com/generate_204
+
+  离港机场名字02_Subscription:
+    type: http
+    url: "你的第二个机场clash订阅"
+    interval: 86400
+    path: ./providers/proxy/离港机场名字02.yaml
+    health-check:
+      enable: true
+      interval: 600
+      url: https://www.gstatic.com/generate_204
+
+#clah  p核正则
+#   (A).*(B)         节点名既有 A 也有 B 
+#   (A)|(B)          节点名有 A 或者 B   
+#   ^(?!.*A)         节点名不含有 A 
+#   ^(?!.*A).*(B)    节点名不含有 A 但含有 B
+#   ^(?!.*(A|B))     节点名既不含有 A 也不含有 B
+
+#订阅正则提取分组
+#离港机场名字01部分
+  离港机场名字01_Filter_All:
+     type: file
+     path: ./providers/proxy/离港机场名字01.yaml
+     health-check:
+       enable: true
+       interval: 600
+       url: https://www.gstatic.com/generate_204
+  离港机场名字01_Filter_HK:
+     filter: 香港|🇭🇰|HK|(?i)Hong
+     type: file
+     path: ./providers/proxy/离港机场名字01.yaml
+     health-check:
+       enable: true
+       interval: 600
+       url: https://www.gstatic.com/generate_204
+  离港机场名字01_Filter_TW:
+     filter: 台湾|🇹🇼|TW|(?i)Taiwan
+     type: file
+     path: ./providers/proxy/离港机场名字01.yaml
+     health-check:
+       enable: true
+       interval: 600
+       url: https://www.gstatic.com/generate_204
+  离港机场名字01_Filter_SG:
+     filter: 狮|🇸🇬|加坡|SG|(?i)Singapore
+     type: file
+     path: ./providers/proxy/离港机场名字01.yaml
+     health-check:
+       enable: true
+       interval: 600
+       url: https://www.gstatic.com/generate_204
+  离港机场名字01_Filter_US:
+     filter: 美国|🇺🇸|US|(?i)States|American
+     type: file
+     path: ./providers/proxy/离港机场名字01.yaml
+     health-check:
+       enable: true
+       interval: 600
+       url: https://www.gstatic.com/generate_204
+  离港机场名字01_Filter_JP:
+     filter: 日本|🇯🇵|东京|JP|(?i)Japan
+     type: file
+     path: ./providers/proxy/离港机场名字01.yaml
+     health-check:
+       enable: true
+       interval: 600
+       url: https://www.gstatic.com/generate_204
+
+
+#离港机场名字02部分
+  离港机场名字02_Filter_All:
+     type: file
+     path: ./providers/proxy/离港机场名字02.yaml
+     health-check:
+       enable: true
+       interval: 600
+       url: https://www.gstatic.com/generate_204
+  离港机场名字02_Filter_HK:
+     filter: 香港|🇭🇰|HK|(?i)Hong
+     type: file
+     path: ./providers/proxy/离港机场名字02.yaml
+     health-check:
+       enable: true
+       interval: 600
+       url: https://www.gstatic.com/generate_204
+  离港机场名字02_Filter_TW:
+     filter: 台湾|🇹🇼|TW|(?i)Taiwan
+     type: file
+     path: ./providers/proxy/离港机场名字02.yaml
+     health-check:
+       enable: true
+       interval: 600
+       url: https://www.gstatic.com/generate_204
+  离港机场名字02_Filter_SG:
+     filter: 狮|🇸🇬|加坡|SG|(?i)Singapore
+     type: file
+     path: ./providers/proxy/离港机场名字02.yaml
+     health-check:
+       enable: true
+       interval: 600
+       url: https://www.gstatic.com/generate_204
+  离港机场名字02_Filter_US:
+     filter: 美国|🇺🇸|US|(?i)States|American
+     type: file
+     path: ./providers/proxy/离港机场名字02.yaml
+     health-check:
+       enable: true
+       interval: 600
+       url: https://www.gstatic.com/generate_204
+  离港机场名字02_Filter_JP:
+     filter: 日本|🇯🇵|东京|JP|(?i)Japan
+     type: file
+     path: ./providers/proxy/离港机场名字02.yaml
+     health-check:
+       enable: true
+       interval: 600
+       url: https://www.gstatic.com/generate_204
+
+#策略分组
+proxy-groups:
+  - name: Final_Match
+    type: select
+    proxies:        
+      - DIRECT
+      - 离港机场名字01
+      - 离港机场名字02
+      - 离港机场名字01♡香港节点(Fallback)
+      - 离港机场名字01♡美国节点(Fallback)
+      - 离港机场名字01♡香港节点
+      - 离港机场名字01♡台湾节点
+      - 离港机场名字01♡新加坡节点
+      - 离港机场名字01♡美国节点
+      - 离港机场名字01♡日本节点
+      - 离港机场名字02♡香港节点(Fallback)
+      - 离港机场名字02♡美国节点(Fallback)
+      - 离港机场名字02♡香港节点
+      - 离港机场名字02♡台湾节点
+      - 离港机场名字02♡新加坡节点
+      - 离港机场名字02♡美国节点
+      - 离港机场名字02♡日本节点
+    use:        
+      - 离港机场名字01_Filter_All
+      - 离港机场名字02_Filter_All
+
+  - name: 离港机场名字01
+    type: select
+    proxies:
+      - DIRECT
+      - 离港机场名字01♡香港节点(Fallback)
+      - 离港机场名字01♡美国节点(Fallback)
+      - 离港机场名字01♡香港节点
+      - 离港机场名字01♡台湾节点
+      - 离港机场名字01♡新加坡节点
+      - 离港机场名字01♡美国节点
+      - 离港机场名字01♡日本节点
+    use:        
+      - 离港机场名字01_Filter_All
+
+  - name: 离港机场名字02
+    type: select
+    proxies:        
+      - DIRECT
+      - 离港机场名字02♡香港节点(Fallback)
+      - 离港机场名字02♡美国节点(Fallback)
+      - 离港机场名字02♡香港节点
+      - 离港机场名字02♡台湾节点
+      - 离港机场名字02♡新加坡节点
+      - 离港机场名字02♡美国节点
+      - 离港机场名字02♡日本节点
+    use:        
+      - 离港机场名字02_Filter_All
+
+  - name: Telegram
+    type: select
+    proxies:        
+      - 离港机场名字01
+      - 离港机场名字02
+      - 离港机场名字01♡香港节点(Fallback)
+      - 离港机场名字01♡美国节点(Fallback)
+      - 离港机场名字01♡香港节点
+      - 离港机场名字01♡台湾节点
+      - 离港机场名字01♡新加坡节点
+      - 离港机场名字01♡美国节点
+      - 离港机场名字01♡日本节点
+      - 离港机场名字02♡香港节点(Fallback)
+      - 离港机场名字02♡美国节点(Fallback)
+      - 离港机场名字02♡香港节点
+      - 离港机场名字02♡台湾节点
+      - 离港机场名字02♡新加坡节点
+      - 离港机场名字02♡美国节点
+      - 离港机场名字02♡日本节点
+    use:        
+      - 离港机场名字01_Filter_All
+      - 离港机场名字02_Filter_All
+
+  - name: YouTube
+    type: select
+    proxies:        
+      - 离港机场名字01
+      - 离港机场名字02
+      - 离港机场名字01♡香港节点(Fallback)
+      - 离港机场名字01♡美国节点(Fallback)
+      - 离港机场名字01♡香港节点
+      - 离港机场名字01♡台湾节点
+      - 离港机场名字01♡新加坡节点
+      - 离港机场名字01♡美国节点
+      - 离港机场名字01♡日本节点
+      - 离港机场名字02♡香港节点(Fallback)
+      - 离港机场名字02♡美国节点(Fallback)
+      - 离港机场名字02♡香港节点
+      - 离港机场名字02♡台湾节点
+      - 离港机场名字02♡新加坡节点
+      - 离港机场名字02♡美国节点
+      - 离港机场名字02♡日本节点
+    use:        
+      - 离港机场名字01_Filter_All
+      - 离港机场名字02_Filter_All
+
+
+  - name: Google
+    type: select
+    proxies:        
+      - 离港机场名字01
+      - 离港机场名字02
+      - 离港机场名字01♡香港节点(Fallback)
+      - 离港机场名字01♡美国节点(Fallback)
+      - 离港机场名字01♡香港节点
+      - 离港机场名字01♡台湾节点
+      - 离港机场名字01♡新加坡节点
+      - 离港机场名字01♡美国节点
+      - 离港机场名字01♡日本节点
+      - 离港机场名字02♡香港节点(Fallback)
+      - 离港机场名字02♡美国节点(Fallback)
+      - 离港机场名字02♡香港节点
+      - 离港机场名字02♡台湾节点
+      - 离港机场名字02♡新加坡节点
+      - 离港机场名字02♡美国节点
+      - 离港机场名字02♡日本节点
+    use:        
+      - 离港机场名字01_Filter_All
+      - 离港机场名字02_Filter_All
+
+  - name: Download
+    type: select
+    proxies:        
+      - DIRECT
+      - 离港机场名字01
+      - 离港机场名字02
+      - 离港机场名字01♡香港节点(Fallback)
+      - 离港机场名字01♡美国节点(Fallback)
+      - 离港机场名字01♡香港节点
+      - 离港机场名字01♡台湾节点
+      - 离港机场名字01♡新加坡节点
+      - 离港机场名字01♡美国节点
+      - 离港机场名字01♡日本节点
+      - 离港机场名字02♡香港节点(Fallback)
+      - 离港机场名字02♡美国节点(Fallback)
+      - 离港机场名字02♡香港节点
+      - 离港机场名字02♡台湾节点
+      - 离港机场名字02♡新加坡节点
+      - 离港机场名字02♡美国节点
+      - 离港机场名字02♡日本节点
+    use:        
+      - 离港机场名字01_Filter_All
+      - 离港机场名字02_Filter_All
+
+  - name: Netflix
+    type: select
+    proxies:        
+      - 离港机场名字01
+      - 离港机场名字02
+      - 离港机场名字01♡香港节点(Fallback)
+      - 离港机场名字01♡美国节点(Fallback)
+      - 离港机场名字01♡香港节点
+      - 离港机场名字01♡台湾节点
+      - 离港机场名字01♡新加坡节点
+      - 离港机场名字01♡美国节点
+      - 离港机场名字01♡日本节点
+      - 离港机场名字02♡香港节点(Fallback)
+      - 离港机场名字02♡美国节点(Fallback)
+      - 离港机场名字02♡香港节点
+      - 离港机场名字02♡台湾节点
+      - 离港机场名字02♡新加坡节点
+      - 离港机场名字02♡美国节点
+      - 离港机场名字02♡日本节点
+    use:        
+      - 离港机场名字01_Filter_All
+      - 离港机场名字02_Filter_All
+
+  - name: Disney
+    type: select
+    proxies:        
+      - 离港机场名字01
+      - 离港机场名字02
+      - 离港机场名字01♡香港节点(Fallback)
+      - 离港机场名字01♡美国节点(Fallback)
+      - 离港机场名字01♡香港节点
+      - 离港机场名字01♡台湾节点
+      - 离港机场名字01♡新加坡节点
+      - 离港机场名字01♡美国节点
+      - 离港机场名字01♡日本节点
+      - 离港机场名字02♡香港节点(Fallback)
+      - 离港机场名字02♡美国节点(Fallback)
+      - 离港机场名字02♡香港节点
+      - 离港机场名字02♡台湾节点
+      - 离港机场名字02♡新加坡节点
+      - 离港机场名字02♡美国节点
+      - 离港机场名字02♡日本节点
+    use:        
+      - 离港机场名字01_Filter_All
+      - 离港机场名字02_Filter_All
+
+  - name: HBO
+    type: select
+    proxies:        
+      - 离港机场名字01
+      - 离港机场名字02
+      - 离港机场名字01♡香港节点(Fallback)
+      - 离港机场名字01♡美国节点(Fallback)
+      - 离港机场名字01♡香港节点
+      - 离港机场名字01♡台湾节点
+      - 离港机场名字01♡新加坡节点
+      - 离港机场名字01♡美国节点
+      - 离港机场名字01♡日本节点
+      - 离港机场名字02♡香港节点(Fallback)
+      - 离港机场名字02♡美国节点(Fallback)
+      - 离港机场名字02♡香港节点
+      - 离港机场名字02♡台湾节点
+      - 离港机场名字02♡新加坡节点
+      - 离港机场名字02♡美国节点
+      - 离港机场名字02♡日本节点
+    use:        
+      - 离港机场名字01_Filter_All
+      - 离港机场名字02_Filter_All
+  - name: OpenAI
+    type: select
+    proxies:        
+      - 离港机场名字01
+      - 离港机场名字02
+      - 离港机场名字01♡香港节点(Fallback)
+      - 离港机场名字01♡美国节点(Fallback)
+      - 离港机场名字01♡香港节点
+      - 离港机场名字01♡台湾节点
+      - 离港机场名字01♡新加坡节点
+      - 离港机场名字01♡美国节点
+      - 离港机场名字01♡日本节点
+      - 离港机场名字02♡香港节点(Fallback)
+      - 离港机场名字02♡美国节点(Fallback)
+      - 离港机场名字02♡香港节点
+      - 离港机场名字02♡台湾节点
+      - 离港机场名字02♡新加坡节点
+      - 离港机场名字02♡美国节点
+      - 离港机场名字02♡日本节点
+    use:        
+      - 离港机场名字01_Filter_All
+      - 离港机场名字02_Filter_All
+
+  - name: Emby
+    type: select
+    proxies:        
+      - DIRECT
+      - 离港机场名字01
+      - 离港机场名字02
+      - 离港机场名字01♡香港节点(Fallback)
+      - 离港机场名字01♡美国节点(Fallback)
+      - 离港机场名字01♡香港节点
+      - 离港机场名字01♡台湾节点
+      - 离港机场名字01♡新加坡节点
+      - 离港机场名字01♡美国节点
+      - 离港机场名字01♡日本节点
+      - 离港机场名字02♡香港节点(Fallback)
+      - 离港机场名字02♡美国节点(Fallback)
+      - 离港机场名字02♡香港节点
+      - 离港机场名字02♡台湾节点
+      - 离港机场名字02♡新加坡节点
+      - 离港机场名字02♡美国节点
+      - 离港机场名字02♡日本节点
+    use:        
+      - 离港机场名字01_Filter_All
+      - 离港机场名字02_Filter_All
+
+  - name: Apple
+    type: select
+    proxies:        
+      - DIRECT
+      - 离港机场名字01
+      - 离港机场名字02
+      - 离港机场名字01♡香港节点(Fallback)
+      - 离港机场名字01♡美国节点(Fallback)
+      - 离港机场名字01♡香港节点
+      - 离港机场名字01♡台湾节点
+      - 离港机场名字01♡新加坡节点
+      - 离港机场名字01♡美国节点
+      - 离港机场名字01♡日本节点
+      - 离港机场名字02♡香港节点(Fallback)
+      - 离港机场名字02♡美国节点(Fallback)
+      - 离港机场名字02♡香港节点
+      - 离港机场名字02♡台湾节点
+      - 离港机场名字02♡新加坡节点
+      - 离港机场名字02♡美国节点
+      - 离港机场名字02♡日本节点
+    use:        
+      - 离港机场名字01_Filter_All
+      - 离港机场名字02_Filter_All
+
+  - name: Microsoft
+    type: select
+    proxies:        
+      - DIRECT
+      - 离港机场名字01
+      - 离港机场名字02
+      - 离港机场名字01♡香港节点(Fallback)
+      - 离港机场名字01♡美国节点(Fallback)
+      - 离港机场名字01♡香港节点
+      - 离港机场名字01♡台湾节点
+      - 离港机场名字01♡新加坡节点
+      - 离港机场名字01♡美国节点
+      - 离港机场名字01♡日本节点
+      - 离港机场名字02♡香港节点(Fallback)
+      - 离港机场名字02♡美国节点(Fallback)
+      - 离港机场名字02♡香港节点
+      - 离港机场名字02♡台湾节点
+      - 离港机场名字02♡新加坡节点
+      - 离港机场名字02♡美国节点
+      - 离港机场名字02♡日本节点
+    use:        
+      - 离港机场名字01_Filter_All
+      - 离港机场名字02_Filter_All
+
+
+#离港机场名字01部分
+  - name: 离港机场名字01♡香港节点(Fallback)
+    type: fallback
+    url: https://www.gstatic.com/generate_204
+    interval: 60
+    lazy: true
+    proxies:
+    use:
+      - 离港机场名字01_Filter_HK
+
+  - name: 离港机场名字01♡美国节点(Fallback)
+    type: fallback
+    url: https://www.gstatic.com/generate_204
+    interval: 60
+    lazy: true
+    proxies:
+    use:
+      - 离港机场名字01_Filter_US
+
+  - name: 离港机场名字01♡香港节点
+    type: select
+    proxies:
+    use:
+      - 离港机场名字01_Filter_HK
+
+  - name: 离港机场名字01♡台湾节点
+    type: select
+    proxies:
+    use:
+      - 离港机场名字01_Filter_TW
+
+  - name: 离港机场名字01♡新加坡节点
+    type: select
+    proxies:
+    use:
+      - 离港机场名字01_Filter_SG
+
+  - name: 离港机场名字01♡美国节点
+    type: select
+    proxies:
+    use:
+      - 离港机场名字01_Filter_US
+
+  - name: 离港机场名字01♡日本节点
+    type: select
+    proxies:
+    use:
+      - 离港机场名字01_Filter_JP
+
+#离港机场名字02部分
+  - name: 离港机场名字02♡香港节点(Fallback) #超时自动选择下一个
+    type: fallback
+    url: https://www.gstatic.com/generate_204
+    interval: 60
+    lazy: true
+    proxies:
+    use:
+      - 离港机场名字02_Filter_HK
+
+  - name: 离港机场名字02♡美国节点(Fallback)
+    type: fallback
+    url: https://www.gstatic.com/generate_204
+    interval: 60
+    lazy: true
+    proxies:
+    use:
+      - 离港机场名字02_Filter_US
+
+  - name: 离港机场名字02♡香港节点
+    type: select
+    proxies:
+    use:
+      - 离港机场名字02_Filter_HK
+
+  - name: 离港机场名字02♡台湾节点
+    type: select
+    proxies:
+    use:
+      - 离港机场名字02_Filter_TW
+
+  - name: 离港机场名字02♡新加坡节点
+    type: select
+    proxies:
+    use:
+      - 离港机场名字02_Filter_SG
+
+  - name: 离港机场名字02♡美国节点
+    type: select
+    proxies:
+    use:
+      - 离港机场名字02_Filter_US
+
+  - name: 离港机场名字02♡日本节点
+    type: select
+    proxies:
+    use:
+      - 离港机场名字02_Filter_JP
+
+
+#远程规则集合
+rule-providers:
+  #本地
+  Lan_rule:
+    type: http
+    behavior: classical
+    url: "https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Lan/Lan.yaml"
+    path: ./RuleSet/Lan.yaml
+    interval: 86400
+
+  #国内域名
+  China_rule:
+    type: http
+    behavior: classical
+    url: "https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/ChinaMax/ChinaMax_Classical.yaml"
+    path: ./RuleSet/ChinaMax_Classical.yaml
+    interval: 86400
+
+  #常用下载软件
+  Download_rule:
+    type: http
+    behavior: classical
+    url: "https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Download/Download.yaml"
+    path: ./RuleSet/Download.yaml
+    interval: 86400
+
+  #流媒体
+  YouTube_rule:
+    type: http
+    behavior: classical
+    url: "https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/YouTube/YouTube.yaml"
+    path: ./RuleSet/YouTube.yaml
+    interval: 86400
+
+  Emby_rule:
+    type: http
+    behavior: classical
+    url: "https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Emby/Emby.yaml"
+    path: ./RuleSet/Emby.yaml
+    interval: 86400
+
+  Netflix_rule:
+    type: http
+    behavior: classical
+    url: "https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Netflix/Netflix.yaml"
+    path: ./RuleSet/Netflix.yaml
+    interval: 86400
+
+  HBO_rule:
+    type: http
+    behavior: classical
+    url: "https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/HBO/HBO.yaml"
+    path: ./RuleSet/HBO.yaml
+    interval: 86400
+
+  Disney_rule:
+    type: http
+    behavior: classical
+    url: "https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Disney/Disney.yaml"
+    path: ./RuleSet/Disney.yaml
+    interval: 86400
+
+  #Telegram
+  Telegram_rule:
+    type: http
+    behavior: classical
+    url: "https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Telegram/Telegram.yaml"
+    path: ./RuleSet/Telegram.yaml
+    interval: 86400
+
+  #Google
+  Google_rule:
+    type: http
+    behavior: classical
+    url: "https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Google/Google.yaml"
+    path: ./RuleSet/Google.yaml
+    interval: 86400
+
+  #Apple
+  Apple_Classical_rule:
+    type: http
+    behavior: classical
+    url: "https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Apple/Apple_Classical.yaml"
+    path: ./RuleSet/Apple_Classical.yaml
+    interval: 86400
+
+  #Microsoft
+  Microsoft_rule:
+    type: http
+    behavior: classical
+    url: "https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Microsoft/Microsoft.yaml"
+    path: ./RuleSet/Microsoft.yaml
+    interval: 86400
+
+  #OpenAI
+  OpenAI_rule:
+    type: http
+    behavior: classical
+    url: "https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/OpenAI/OpenAI.yaml"
+    path: ./RuleSet/OpenAI.yaml
+    interval: 86400
+
+
+rules:
+  #本地局域网
+  - RULE-SET,Lan_rule,DIRECT
+ 
+  # 国内
+  - RULE-SET,China_rule,DIRECT,no-resolve  #no-resolve加上就是不解析DNS
+  - GEOIP,CN,DIRECT
+
+  #常用下载软件
+  - RULE-SET,Download_rule,Download
+
+  # Telegram
+  - RULE-SET,Telegram_rule,Telegram 
+
+  # OpenAI
+  - RULE-SET,OpenAI_rule,OpenAI
+
+  # Apple
+  - RULE-SET,Apple_Classical_rule,Apple
+  
+  # Microsoft
+  - RULE-SET,Microsoft_rule,Microsoft
+ 
+  # 媒体
+  - RULE-SET,YouTube_rule,YouTube
+  - RULE-SET,Emby_rule,Emby 
+  - RULE-SET,Netflix_rule,Netflix
+  - RULE-SET,Disney_rule,Disney
+  - RULE-SET,HBO_rule,HBO
+
+  # Google
+  - RULE-SET,Google_rule,Google
+
+  # 必须
+  - MATCH,Final_Match
