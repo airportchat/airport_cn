@@ -1,5 +1,11 @@
 #####使用前必读######
-
+#您好，这里离港专用Clash配置模板(此模板是2个机场，如果你还需要加可以按照格式添加即可)，欢迎加入频道&群组和大佬们一起讨论：
+#优质离港机场频道：https://t.me/airport_cn
+#离港vip候机室：https://t.me/airport_chat
+#规则来自blackmatrix7大佬：https://github.com/blackmatrix7/ios_rule_script/tree/master/rule
+#使用方法：
+#第一步：将此界面所有代码复制到本地用文本编辑器(记事本/Notepad++等)打开，一般是Ctrl+H组合键调出替换窗口，将“离港机场名字01”和“离港机场名字02”分别全部替换成你的机场名字即可
+#第二步:将68行和78行中url换成你的机场clash订阅后导入clash即可！
 
 port: 7890
 socks-port: 7891
