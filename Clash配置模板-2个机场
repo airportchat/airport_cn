@@ -63,7 +63,7 @@ dns:
 
 #远程订阅
 proxy-providers:
-  离港机场名字01_Subscription:
+  离港机场名字01_Subscription: &离港机场名字01 #建立锚点
     type: http
     url: "你的第一个机场clash订阅"
     interval: 86400
@@ -73,7 +73,7 @@ proxy-providers:
       interval: 600
       url: https://www.gstatic.com/generate_204
 
-  离港机场名字02_Subscription:
+  离港机场名字02_Subscription: &离港机场名字02 #建立锚点
     type: http
     url: "你的第二个机场clash订阅"
     interval: 86400
@@ -93,102 +93,52 @@ proxy-providers:
 #订阅正则提取分组
 #离港机场名字01部分
   离港机场名字01_Filter_All:
-     type: file
-     path: ./providers/proxy/离港机场名字01.yaml
-     health-check:
-       enable: true
-       interval: 600
-       url: https://www.gstatic.com/generate_204
+    <<: *离港机场名字01
+
   离港机场名字01_Filter_HK:
-     filter: 香港|🇭🇰|HK|(?i)Hong
-     type: file
-     path: ./providers/proxy/离港机场名字01.yaml
-     health-check:
-       enable: true
-       interval: 600
-       url: https://www.gstatic.com/generate_204
+    <<: *离港机场名字01
+    filter: (?i)香港|🇭🇰|HK|Hong
+
   离港机场名字01_Filter_TW:
-     filter: 台(湾|灣)|🇹🇼|TW|(?i)Taiwan
-     type: file
-     path: ./providers/proxy/离港机场名字01.yaml
-     health-check:
-       enable: true
-       interval: 600
-       url: https://www.gstatic.com/generate_204
+    <<: *离港机场名字01
+    filter: (?i)台(湾|灣)|🇹🇼|TW|Taiwan
+
   离港机场名字01_Filter_SG:
-     filter: 狮|獅|🇸🇬|加坡|SG|(?i)Singapore
-     type: file
-     path: ./providers/proxy/离港机场名字01.yaml
-     health-check:
-       enable: true
-       interval: 600
-       url: https://www.gstatic.com/generate_204
+    <<: *离港机场名字01
+    filter: (?i)狮|獅|🇸🇬|加坡|SG|Singapore
+
   离港机场名字01_Filter_US:
-     filter: 美(国|國)|🇺🇸|US|(?i)States|American
-     type: file
-     path: ./providers/proxy/离港机场名字01.yaml
-     health-check:
-       enable: true
-       interval: 600
-       url: https://www.gstatic.com/generate_204
+    <<: *离港机场名字01
+    filter: (?i)美(国|國)|🇺🇸|US|States|American
+
   离港机场名字01_Filter_JP:
-     filter: 日本|🇯🇵|(东|東)京|JP|(?i)Japan
-     type: file
-     path: ./providers/proxy/离港机场名字01.yaml
-     health-check:
-       enable: true
-       interval: 600
-       url: https://www.gstatic.com/generate_204
+    <<: *离港机场名字01
+    filter: (?i)日本|🇯🇵|(东|東)京|JP|Japan
 
 
 #离港机场名字02部分
   离港机场名字02_Filter_All:
-     type: file
-     path: ./providers/proxy/离港机场名字02.yaml
-     health-check:
-       enable: true
-       interval: 600
-       url: https://www.gstatic.com/generate_204
+    <<: *离港机场名字02
+
   离港机场名字02_Filter_HK:
-     filter: 香港|🇭🇰|HK|(?i)Hong
-     type: file
-     path: ./providers/proxy/离港机场名字02.yaml
-     health-check:
-       enable: true
-       interval: 600
-       url: https://www.gstatic.com/generate_204
+    <<: *离港机场名字02
+    filter: (?i)香港|🇭🇰|HK|Hong
+
   离港机场名字02_Filter_TW:
-     filter: 台(湾|灣)|🇹🇼|TW|(?i)Taiwan
-     type: file
-     path: ./providers/proxy/离港机场名字02.yaml
-     health-check:
-       enable: true
-       interval: 600
-       url: https://www.gstatic.com/generate_204
+    <<: *离港机场名字02
+    filter: (?i)台(湾|灣)|🇹🇼|TW|Taiwan
+
   离港机场名字02_Filter_SG:
-     filter: 狮|獅|🇸🇬|加坡|SG|(?i)Singapore
-     type: file
-     path: ./providers/proxy/离港机场名字02.yaml
-     health-check:
-       enable: true
-       interval: 600
-       url: https://www.gstatic.com/generate_204
+    <<: *离港机场名字02
+    filter: (?i)狮|獅|🇸🇬|加坡|SG|Singapore
+
   离港机场名字02_Filter_US:
-     filter: 美(国|國)|🇺🇸|US|(?i)States|American
-     type: file
-     path: ./providers/proxy/离港机场名字02.yaml
-     health-check:
-       enable: true
-       interval: 600
-       url: https://www.gstatic.com/generate_204
+    <<: *离港机场名字02
+    filter: (?i)美(国|國)|🇺🇸|US|States|American
+
   离港机场名字02_Filter_JP:
-     filter: 日本|🇯🇵|(东|東)京|JP|(?i)Japan
-     type: file
-     path: ./providers/proxy/离港机场名字02.yaml
-     health-check:
-       enable: true
-       interval: 600
-       url: https://www.gstatic.com/generate_204
+    <<: *离港机场名字02
+    filter: (?i)日本|🇯🇵|(东|東)京|JP|Japan
 
 #策略分组
 proxy-groups:
