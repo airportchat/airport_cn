@@ -937,16 +937,6 @@ rule-providers:
 
 
 rules:
-  #本地局域网
-  - RULE-SET,Lan_rule,DIRECT
- 
-  # 国内
-  - RULE-SET,China_rule,DIRECT,no-resolve  #no-resolve加上就是不解析DNS
-  - GEOIP,CN,DIRECT
-
-  #常用下载软件
-  - RULE-SET,Download_rule,Download
-
   # Telegram
   - RULE-SET,Telegram_rule,Telegram 
 
@@ -968,6 +958,16 @@ rules:
 
   # Google
   - RULE-SET,Google_rule,Google
+
+  #本地局域网
+  - RULE-SET,Lan_rule,DIRECT
+ 
+  # 国内
+  - RULE-SET,China_rule,DIRECT,no-resolve  #no-resolve加上就是不解析DNS
+  - GEOIP,CN,DIRECT
+
+  #常用下载软件
+  - RULE-SET,Download_rule,Download
 
   # 必须
   - MATCH,Final_Match
