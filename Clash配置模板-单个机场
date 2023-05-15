@@ -63,8 +63,7 @@ dns:
 
 #远程订阅
 proxy-providers:
-  离港机场名字01_Subscription:
-  离港机场名字01: &离港机场名字01 #建立锚点
+  离港机场名字01_Subscription: &离港机场名字01 #建立锚点
     type: http
     url: "你的第一个机场clash订阅"
     interval: 86400
@@ -84,26 +83,26 @@ proxy-providers:
 #订阅正则提取分组
 #离港机场名字01部分
   离港机场名字01_Filter_All:
-    <<: *离港机场名字01 #引用锚点内容
+    <<: *离港机场名字01
 
   离港机场名字01_Filter_HK:
-    <<: *离港机场名字01 #引用锚点内容
+    <<: *离港机场名字01
     filter: (?i)香港|🇭🇰|HK|Hong
 
   离港机场名字01_Filter_TW:
-    <<: *离港机场名字01 #引用锚点内容
+    <<: *离港机场名字01
     filter: (?i)台(湾|灣)|🇹🇼|TW|Taiwan
 
   离港机场名字01_Filter_SG:
-    <<: *离港机场名字01 #引用锚点内容
+    <<: *离港机场名字01
     filter: (?i)狮|獅|🇸🇬|加坡|SG|Singapore
 
   离港机场名字01_Filter_US:
-    <<: *离港机场名字01 #引用锚点内容
+    <<: *离港机场名字01
     filter: (?i)美(国|國)|🇺🇸|US|States|American
 
   离港机场名字01_Filter_JP:
-    <<: *离港机场名字01 #引用锚点内容
+    <<: *离港机场名字01
     filter: (?i)日本|🇯🇵|(东|東)京|JP|Japan
 
 
