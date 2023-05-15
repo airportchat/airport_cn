@@ -1,5 +1,5 @@
 #####使用前必读######
-#您好，这里离港专用Clash配置模板(此模板是2个机场，如果你还需要加可以按照格式添加即可)，欢迎加入频道&群组和大佬们一起讨论：
+#您好，这里离港专用Clash配置模板(此模板是3个机场，如果你还需要加可以按照格式添加即可)，欢迎加入频道&群组和大佬们一起讨论：
 #优质离港机场频道：https://t.me/airport_cn
 #离港vip候机室：https://t.me/airport_chat
 #规则来自blackmatrix7大佬：https://github.com/blackmatrix7/ios_rule_script/tree/master/rule
@@ -118,7 +118,7 @@ proxy-providers:
        interval: 600
        url: https://www.gstatic.com/generate_204
   离港机场名字01_Filter_TW:
-     filter: 台湾|🇹🇼|TW|(?i)Taiwan
+     filter: 台(湾|灣)|🇹🇼|TW|(?i)Taiwan
      type: file
      path: ./providers/proxy/离港机场名字01.yaml
      health-check:
@@ -126,7 +126,7 @@ proxy-providers:
        interval: 600
        url: https://www.gstatic.com/generate_204
   离港机场名字01_Filter_SG:
-     filter: 狮|🇸🇬|加坡|SG|(?i)Singapore
+     filter: 狮|獅|🇸🇬|加坡|SG|(?i)Singapore
      type: file
      path: ./providers/proxy/离港机场名字01.yaml
      health-check:
@@ -134,7 +134,7 @@ proxy-providers:
        interval: 600
        url: https://www.gstatic.com/generate_204
   离港机场名字01_Filter_US:
-     filter: 美国|🇺🇸|US|(?i)States|American
+     filter: 美(国|國)|🇺🇸|US|(?i)States|American
      type: file
      path: ./providers/proxy/离港机场名字01.yaml
      health-check:
@@ -142,7 +142,7 @@ proxy-providers:
        interval: 600
        url: https://www.gstatic.com/generate_204
   离港机场名字01_Filter_JP:
-     filter: 日本|🇯🇵|东京|JP|(?i)Japan
+     filter: 日本|🇯🇵|(东|東)京|JP|(?i)Japan
      type: file
      path: ./providers/proxy/离港机场名字01.yaml
      health-check:
@@ -168,7 +168,7 @@ proxy-providers:
        interval: 600
        url: https://www.gstatic.com/generate_204
   离港机场名字02_Filter_TW:
-     filter: 台湾|🇹🇼|TW|(?i)Taiwan
+     filter: 台(湾|灣)|🇹🇼|TW|(?i)Taiwan
      type: file
      path: ./providers/proxy/离港机场名字02.yaml
      health-check:
@@ -176,7 +176,7 @@ proxy-providers:
        interval: 600
        url: https://www.gstatic.com/generate_204
   离港机场名字02_Filter_SG:
-     filter: 狮|🇸🇬|加坡|SG|(?i)Singapore
+     filter: 狮|獅|🇸🇬|加坡|SG|(?i)Singapore
      type: file
      path: ./providers/proxy/离港机场名字02.yaml
      health-check:
@@ -184,7 +184,7 @@ proxy-providers:
        interval: 600
        url: https://www.gstatic.com/generate_204
   离港机场名字02_Filter_US:
-     filter: 美国|🇺🇸|US|(?i)States|American
+     filter: 美(国|國)|🇺🇸|US|(?i)States|American
      type: file
      path: ./providers/proxy/离港机场名字02.yaml
      health-check:
@@ -192,7 +192,7 @@ proxy-providers:
        interval: 600
        url: https://www.gstatic.com/generate_204
   离港机场名字02_Filter_JP:
-     filter: 日本|🇯🇵|东京|JP|(?i)Japan
+     filter: 日本|🇯🇵|(东|東)京|JP|(?i)Japan
      type: file
      path: ./providers/proxy/离港机场名字02.yaml
      health-check:
@@ -218,7 +218,7 @@ proxy-providers:
        interval: 600
        url: https://www.gstatic.com/generate_204
   离港机场名字03_Filter_TW:
-     filter: 台湾|🇹🇼|TW|(?i)Taiwan
+     filter: 台(湾|灣)|🇹🇼|TW|(?i)Taiwan
      type: file
      path: ./providers/proxy/离港机场名字03.yaml
      health-check:
@@ -226,7 +226,7 @@ proxy-providers:
        interval: 600
        url: https://www.gstatic.com/generate_204
   离港机场名字03_Filter_SG:
-     filter: 狮|🇸🇬|加坡|SG|(?i)Singapore
+     filter: 狮|獅|🇸🇬|加坡|SG|(?i)Singapore
      type: file
      path: ./providers/proxy/离港机场名字03.yaml
      health-check:
@@ -234,7 +234,7 @@ proxy-providers:
        interval: 600
        url: https://www.gstatic.com/generate_204
   离港机场名字03_Filter_US:
-     filter: 美国|🇺🇸|US|(?i)States|American
+     filter: 美(国|國)|🇺🇸|US|(?i)States|American
      type: file
      path: ./providers/proxy/离港机场名字03.yaml
      health-check:
@@ -242,7 +242,7 @@ proxy-providers:
        interval: 600
        url: https://www.gstatic.com/generate_204
   离港机场名字03_Filter_JP:
-     filter: 日本|🇯🇵|东京|JP|(?i)Japan
+     filter: 日本|🇯🇵|(东|東)京|JP|(?i)Japan
      type: file
      path: ./providers/proxy/离港机场名字03.yaml
      health-check:
