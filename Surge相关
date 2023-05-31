@@ -1,0 +1,17 @@
+Surge 在同一个配置中订阅多个机场节点的方法
+
+配置方案1:
+[Proxy Group]
+Proxy = select, 机场1, 机场2, 机场3, 聚合
+机场1 = select, policy-path=机场1的Surge托管配置
+机场2 = select, policy-path=机场2的Surge托管配置
+机场3 = select, policy-path=机场3的Surge托管配置
+聚合 = select, include-other-group="机场1, 机场2, 机场3", policy-regex-filter=节点筛选(比如:HK|HONGKONG|香港)
+
+配置方案2(隐藏机场的策略):
+[Proxy Group]
+Proxy = select, 聚合
+机场1 = select, policy-path=机场1的Surge托管配置, hidden=true
+机场2 = select, policy-path=机场2的Surge托管配置, hidden=true
+机场3 = select, policy-path=机场3的Surge托管配置, hidden=true
+聚合 = select, include-other-group="机场1, 机场2, 机场3", policy-regex-filter=节点筛选(比如:HK|HONGKONG|香港)
