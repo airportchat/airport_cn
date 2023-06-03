@@ -94,20 +94,21 @@ include =
 # ----------
 
 #分流策略组
-Telegram = select,PROXY,香港节点(Fallback),台湾节点(Fallback),美国节点(Fallback),香港节点,台湾节点,日本节点,新加坡节点,韩国节点,美国节点,interval=86400,timeout=5,select=0,url=http://www.gstatic.com/generate_204
-OpenAI = select,PROXY,香港节点(Fallback),台湾节点(Fallback),美国节点(Fallback),香港节点,台湾节点,日本节点,新加坡节点,韩国节点,美国节点,interval=86400,timeout=5,select=0,url=http://www.gstatic.com/generate_204
-YouTube = select,PROXY,香港节点(Fallback),台湾节点(Fallback),美国节点(Fallback),香港节点,台湾节点,日本节点,新加坡节点,韩国节点,美国节点,interval=86400,timeout=5,select=0,url=http://www.gstatic.com/generate_204
-Emby = select,DIRECT,PROXY,香港节点(Fallback),台湾节点(Fallback),美国节点(Fallback),香港节点,台湾节点,日本节点,新加坡节点,韩国节点,美国节点,interval=86400,timeout=5,select=0,url=http://www.gstatic.com/generate_204
-Netflix = select,PROXY,香港节点(Fallback),台湾节点(Fallback),美国节点(Fallback),香港节点,台湾节点,日本节点,新加坡节点,韩国节点,美国节点,interval=86400,timeout=5,select=0,url=http://www.gstatic.com/generate_204
-Disney = select,PROXY,香港节点(Fallback),台湾节点(Fallback),美国节点(Fallback),香港节点,台湾节点,日本节点,新加坡节点,韩国节点,美国节点,interval=86400,timeout=5,select=0,url=http://www.gstatic.com/generate_204
-HBO = select,PROXY,香港节点(Fallback),台湾节点(Fallback),美国节点(Fallback),香港节点,台湾节点,日本节点,新加坡节点,韩国节点,美国节点,interval=86400,timeout=5,select=0,url=http://www.gstatic.com/generate_204
-Google = select,PROXY,香港节点(Fallback),台湾节点(Fallback),美国节点(Fallback),香港节点,台湾节点,日本节点,新加坡节点,韩国节点,美国节点,interval=86400,timeout=5,select=0,url=http://www.gstatic.com/generate_204
+Telegram = select,PROXY,香港节点(Fallback),台湾节点(Fallback),美国节点(Fallback),香港节点,台湾节点,日本节点,新加坡节点,韩国节点,美国节点,Node_All,interval=86400,timeout=5,select=0,url=http://www.gstatic.com/generate_204
+OpenAI = select,PROXY,香港节点(Fallback),台湾节点(Fallback),美国节点(Fallback),香港节点,台湾节点,日本节点,新加坡节点,韩国节点,美国节点,Node_All,interval=86400,timeout=5,select=0,url=http://www.gstatic.com/generate_204
+YouTube = select,PROXY,香港节点(Fallback),台湾节点(Fallback),美国节点(Fallback),香港节点,台湾节点,日本节点,新加坡节点,韩国节点,美国节点,Node_All,interval=86400,timeout=5,select=0,url=http://www.gstatic.com/generate_204
+Emby = select,DIRECT,PROXY,香港节点(Fallback),台湾节点(Fallback),美国节点(Fallback),香港节点,台湾节点,日本节点,新加坡节点,韩国节点,美国节点,Node_All,interval=86400,timeout=5,select=0,url=http://www.gstatic.com/generate_204
+Netflix = select,PROXY,香港节点(Fallback),台湾节点(Fallback),美国节点(Fallback),香港节点,台湾节点,日本节点,新加坡节点,韩国节点,美国节点,Node_All,interval=86400,timeout=5,select=0,url=http://www.gstatic.com/generate_204
+Disney = select,PROXY,香港节点(Fallback),台湾节点(Fallback),美国节点(Fallback),香港节点,台湾节点,日本节点,新加坡节点,韩国节点,美国节点,Node_All,interval=86400,timeout=5,select=0,url=http://www.gstatic.com/generate_204
+HBO = select,PROXY,香港节点(Fallback),台湾节点(Fallback),美国节点(Fallback),香港节点,台湾节点,日本节点,新加坡节点,韩国节点,美国节点,Node_All,interval=86400,timeout=5,select=0,url=http://www.gstatic.com/generate_204
+Google = select,PROXY,香港节点(Fallback),台湾节点(Fallback),美国节点(Fallback),香港节点,台湾节点,日本节点,新加坡节点,韩国节点,美国节点,Node_All,interval=86400,timeout=5,select=0,url=http://www.gstatic.com/generate_204
 
-Apple = select,DIRECT,PROXY,香港节点(Fallback),台湾节点(Fallback),美国节点(Fallback),香港节点,台湾节点,日本节点,新加坡节点,韩国节点,美国节点,interval=86400,timeout=5,select=0,url=http://www.gstatic.com/generate_204
-Microsoft = select,DIRECT,PROXY,香港节点(Fallback),台湾节点(Fallback),美国节点(Fallback),香港节点,台湾节点,日本节点,新加坡节点,韩国节点,美国节点,interval=86400,timeout=5,select=0,url=http://www.gstatic.com/generate_204
-Download = select,DIRECT,PROXY,香港节点(Fallback),台湾节点(Fallback),美国节点(Fallback),香港节点,台湾节点,日本节点,新加坡节点,韩国节点,美国节点,interval=86400,timeout=5,select=0,url=http://www.gstatic.com/generate_204
+Apple = select,DIRECT,PROXY,香港节点(Fallback),台湾节点(Fallback),美国节点(Fallback),香港节点,台湾节点,日本节点,新加坡节点,韩国节点,美国节点,Node_All,interval=86400,timeout=5,select=0,url=http://www.gstatic.com/generate_204
+Microsoft = select,DIRECT,PROXY,香港节点(Fallback),台湾节点(Fallback),美国节点(Fallback),香港节点,台湾节点,日本节点,新加坡节点,韩国节点,美国节点,Node_All,interval=86400,timeout=5,select=0,url=http://www.gstatic.com/generate_204
+Download = select,DIRECT,PROXY,香港节点(Fallback),台湾节点(Fallback),美国节点(Fallback),香港节点,台湾节点,日本节点,新加坡节点,韩国节点,美国节点,Node_All,interval=86400,timeout=5,select=0,url=http://www.gstatic.com/generate_204
 
 #正则提取节点分组
+Node_All = url-test,url=http://www.gstatic.com/generate_204,interval=600,tolerance=0,timeout=5,select=0
 香港节点 = url-test,url=http://www.gstatic.com/generate_204,interval=600,tolerance=0,timeout=5,select=0,policy-regex-filter=(?i)香港|🇭🇰|HK|Hong
 台湾节点 = url-test,url=http://www.gstatic.com/generate_204,interval=600,tolerance=0,timeout=5,select=0,policy-regex-filter=(?i)台(湾|灣)|🇹🇼|TW|Taiwan
 新加坡节点 = url-test,url=http://www.gstatic.com/generate_204,interval=600,tolerance=0,timeout=5,select=0,policy-regex-filter=(?i)狮|獅|🇸🇬|加坡|SG|Singapore
