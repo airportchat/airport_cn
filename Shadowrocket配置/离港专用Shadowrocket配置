@@ -8,6 +8,12 @@
 #2. Shadowrocket添加此远程配置方法：配置 - 右上角➕ - 粘贴配置链接 - 下载 - 点击远程文件下的配置链接 - 使用配置
 #3. 设置代理分组方法：首页使劲往下滑会出现【代理分组】界面 - 在此界面设置好每个策略组需要走的分组就可以愉快的使用了
 
+#特别提示：如果安装了模块需要重新按照下面步骤设置一下HTTPS解密
+# Shadowrocket打开HTTPS解密方法：
+# 1.点击配置文件后面ⓘ - HTTPS解密 - 证书 - 生成新的CA证书 - 安装证书。
+# 2.手机设置 - 已下载描述文件 - 安装。
+# 3.手机设置 - 通用 - 关于本机 - 证书信任设置 - 开启对应Shadowrocket证书信任。
+
 
 
 [General]
@@ -79,7 +85,7 @@ include =
 # ----------
 
 #分流策略组
-Telegram = select,PROXY,香港节点(Fallback),台湾节点(Fallback),美国节点(Fallback),香港节点,台湾节点,日本节点,新加坡节点,韩国节点,美国节点,include-all-proxies=0,interval=86400,timeout=5,select=0,url=http://www.gstatic.com/generate_204
+Telegram = select,PROXY,香港节点(Fallback),台湾节点(Fallback),美国节点(Fallback),香港节点,台湾节点,日本节点,新加坡节点,韩国节点,美国节点,interval=86400,timeout=5,select=0,url=http://www.gstatic.com/generate_204
 OpenAI = select,PROXY,香港节点(Fallback),台湾节点(Fallback),美国节点(Fallback),香港节点,台湾节点,日本节点,新加坡节点,韩国节点,美国节点,interval=86400,timeout=5,select=0,url=http://www.gstatic.com/generate_204
 YouTube = select,PROXY,香港节点(Fallback),台湾节点(Fallback),美国节点(Fallback),香港节点,台湾节点,日本节点,新加坡节点,韩国节点,美国节点,interval=86400,timeout=5,select=0,url=http://www.gstatic.com/generate_204
 Emby = select,DIRECT,PROXY,香港节点(Fallback),台湾节点(Fallback),美国节点(Fallback),香港节点,台湾节点,日本节点,新加坡节点,韩国节点,美国节点,interval=86400,timeout=5,select=0,url=http://www.gstatic.com/generate_204
