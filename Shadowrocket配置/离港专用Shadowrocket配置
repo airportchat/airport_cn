@@ -85,18 +85,29 @@ include =
 # ----------
 
 #分流策略组
-Telegram = select,PROXY,香港节点(Fallback),台湾节点(Fallback),美国节点(Fallback),香港节点,台湾节点,日本节点,新加坡节点,韩国节点,美国节点,interval=86400,timeout=5,select=0,url=http://www.gstatic.com/generate_204
-OpenAI = select,PROXY,香港节点(Fallback),台湾节点(Fallback),美国节点(Fallback),香港节点,台湾节点,日本节点,新加坡节点,韩国节点,美国节点,interval=86400,timeout=5,select=0,url=http://www.gstatic.com/generate_204
-YouTube = select,PROXY,香港节点(Fallback),台湾节点(Fallback),美国节点(Fallback),香港节点,台湾节点,日本节点,新加坡节点,韩国节点,美国节点,interval=86400,timeout=5,select=0,url=http://www.gstatic.com/generate_204
-Emby = select,DIRECT,PROXY,香港节点(Fallback),台湾节点(Fallback),美国节点(Fallback),香港节点,台湾节点,日本节点,新加坡节点,韩国节点,美国节点,interval=86400,timeout=5,select=0,url=http://www.gstatic.com/generate_204
-Netflix = select,PROXY,香港节点(Fallback),台湾节点(Fallback),美国节点(Fallback),香港节点,台湾节点,日本节点,新加坡节点,韩国节点,美国节点,interval=86400,timeout=5,select=0,url=http://www.gstatic.com/generate_204
-Disney = select,PROXY,香港节点(Fallback),台湾节点(Fallback),美国节点(Fallback),香港节点,台湾节点,日本节点,新加坡节点,韩国节点,美国节点,interval=86400,timeout=5,select=0,url=http://www.gstatic.com/generate_204
-HBO = select,PROXY,香港节点(Fallback),台湾节点(Fallback),美国节点(Fallback),香港节点,台湾节点,日本节点,新加坡节点,韩国节点,美国节点,interval=86400,timeout=5,select=0,url=http://www.gstatic.com/generate_204
-Google = select,PROXY,香港节点(Fallback),台湾节点(Fallback),美国节点(Fallback),香港节点,台湾节点,日本节点,新加坡节点,韩国节点,美国节点,interval=86400,timeout=5,select=0,url=http://www.gstatic.com/generate_204
+Telegram = select,PROXY,香港节点(Fallback),新加坡节点(Fallback),台湾节点(Fallback),美国节点(Fallback),香港节点,台湾节点,日本节点,新加坡节点,韩国节点,美国节点,interval=86400,timeout=5,select=0,url=http://www.gstatic.com/generate_204
+OpenAI = select,PROXY,香港节点(Fallback),新加坡节点(Fallback),台湾节点(Fallback),美国节点(Fallback),香港节点,台湾节点,日本节点,新加坡节点,韩国节点,美国节点,interval=86400,timeout=5,select=0,url=http://www.gstatic.com/generate_204
+YouTube = select,PROXY,香港节点(Fallback),新加坡节点(Fallback),台湾节点(Fallback),美国节点(Fallback),香港节点,台湾节点,日本节点,新加坡节点,韩国节点,美国节点,interval=86400,timeout=5,select=0,url=http://www.gstatic.com/generate_204
+Netflix = select,PROXY,香港节点(Fallback),新加坡节点(Fallback),台湾节点(Fallback),美国节点(Fallback),香港节点,台湾节点,日本节点,新加坡节点,韩国节点,美国节点,interval=86400,timeout=5,select=0,url=http://www.gstatic.com/generate_204
+Disney = select,PROXY,香港节点(Fallback),新加坡节点(Fallback),台湾节点(Fallback),美国节点(Fallback),香港节点,台湾节点,日本节点,新加坡节点,韩国节点,美国节点,interval=86400,timeout=5,select=0,url=http://www.gstatic.com/generate_204
+HBO = select,PROXY,香港节点(Fallback),新加坡节点(Fallback),台湾节点(Fallback),美国节点(Fallback),香港节点,台湾节点,日本节点,新加坡节点,韩国节点,美国节点,interval=86400,timeout=5,select=0,url=http://www.gstatic.com/generate_204
+Bahamut = select,PROXY,香港节点(Fallback),新加坡节点(Fallback),台湾节点(Fallback),美国节点(Fallback),香港节点,台湾节点,日本节点,新加坡节点,韩国节点,美国节点,interval=86400,timeout=5,select=0,url=http://www.gstatic.com/generate_204
+BiliBili = select,PROXY,香港节点(Fallback),新加坡节点(Fallback),台湾节点(Fallback),美国节点(Fallback),香港节点,台湾节点,日本节点,新加坡节点,韩国节点,美国节点,interval=86400,timeout=5,select=0,url=http://www.gstatic.com/generate_204
+Emby = select,DIRECT,PROXY,香港节点(Fallback),新加坡节点(Fallback),台湾节点(Fallback),美国节点(Fallback),香港节点,台湾节点,日本节点,新加坡节点,韩国节点,美国节点,interval=86400,timeout=5,select=0,url=http://www.gstatic.com/generate_204
+Google = select,PROXY,香港节点(Fallback),新加坡节点(Fallback),台湾节点(Fallback),美国节点(Fallback),香港节点,台湾节点,日本节点,新加坡节点,韩国节点,美国节点,interval=86400,timeout=5,select=0,url=http://www.gstatic.com/generate_204
+Tiktok  = select,PROXY,香港节点(Fallback),新加坡节点(Fallback),台湾节点(Fallback),美国节点(Fallback),香港节点,台湾节点,日本节点,新加坡节点,韩国节点,美国节点,interval=86400,timeout=5,select=0,url=http://www.gstatic.com/generate_204
+Twitter = select,PROXY,香港节点(Fallback),新加坡节点(Fallback),台湾节点(Fallback),美国节点(Fallback),香港节点,台湾节点,日本节点,新加坡节点,韩国节点,美国节点,interval=86400,timeout=5,select=0,url=http://www.gstatic.com/generate_204
+Instagram = select,PROXY,香港节点(Fallback),新加坡节点(Fallback),台湾节点(Fallback),美国节点(Fallback),香港节点,台湾节点,日本节点,新加坡节点,韩国节点,美国节点,interval=86400,timeout=5,select=0,url=http://www.gstatic.com/generate_204
+Facebook = select,PROXY,香港节点(Fallback),新加坡节点(Fallback),台湾节点(Fallback),美国节点(Fallback),香港节点,台湾节点,日本节点,新加坡节点,韩国节点,美国节点,interval=86400,timeout=5,select=0,url=http://www.gstatic.com/generate_204
+Spotify = select,PROXY,香港节点(Fallback),新加坡节点(Fallback),台湾节点(Fallback),美国节点(Fallback),香港节点,台湾节点,日本节点,新加坡节点,韩国节点,美国节点,interval=86400,timeout=5,select=0,url=http://www.gstatic.com/generate_204
+Discord = select,PROXY,香港节点(Fallback),新加坡节点(Fallback),台湾节点(Fallback),美国节点(Fallback),香港节点,台湾节点,日本节点,新加坡节点,韩国节点,美国节点,interval=86400,timeout=5,select=0,url=http://www.gstatic.com/generate_204
 
-Apple = select,DIRECT,PROXY,香港节点(Fallback),台湾节点(Fallback),美国节点(Fallback),香港节点,台湾节点,日本节点,新加坡节点,韩国节点,美国节点,interval=86400,timeout=5,select=0,url=http://www.gstatic.com/generate_204
-Microsoft = select,DIRECT,PROXY,香港节点(Fallback),台湾节点(Fallback),美国节点(Fallback),香港节点,台湾节点,日本节点,新加坡节点,韩国节点,美国节点,interval=86400,timeout=5,select=0,url=http://www.gstatic.com/generate_204
-Download = select,DIRECT,PROXY,香港节点(Fallback),台湾节点(Fallback),美国节点(Fallback),香港节点,台湾节点,日本节点,新加坡节点,韩国节点,美国节点,interval=86400,timeout=5,select=0,url=http://www.gstatic.com/generate_204
+PayPal = select,PROXY,香港节点(Fallback),新加坡节点(Fallback),台湾节点(Fallback),美国节点(Fallback),香港节点,台湾节点,日本节点,新加坡节点,韩国节点,美国节点,interval=86400,timeout=5,select=0,url=http://www.gstatic.com/generate_204
+Steam = select,PROXY,香港节点(Fallback),新加坡节点(Fallback),台湾节点(Fallback),美国节点(Fallback),香港节点,台湾节点,日本节点,新加坡节点,韩国节点,美国节点,interval=86400,timeout=5,select=0,url=http://www.gstatic.com/generate_204
+
+Apple = select,DIRECT,PROXY,香港节点(Fallback),新加坡节点(Fallback),台湾节点(Fallback),美国节点(Fallback),香港节点,台湾节点,日本节点,新加坡节点,韩国节点,美国节点,interval=86400,timeout=5,select=0,url=http://www.gstatic.com/generate_204
+Microsoft = select,DIRECT,PROXY,香港节点(Fallback),新加坡节点(Fallback),台湾节点(Fallback),美国节点(Fallback),香港节点,台湾节点,日本节点,新加坡节点,韩国节点,美国节点,interval=86400,timeout=5,select=0,url=http://www.gstatic.com/generate_204
+Download = select,DIRECT,PROXY,香港节点(Fallback),新加坡节点(Fallback),台湾节点(Fallback),美国节点(Fallback),香港节点,台湾节点,日本节点,新加坡节点,韩国节点,美国节点,interval=86400,timeout=5,select=0,url=http://www.gstatic.com/generate_204
 
 #正则提取节点分组
 香港节点 = url-test,url=http://www.gstatic.com/generate_204,interval=600,tolerance=0,timeout=5,select=0,policy-regex-filter=(?i)香港|🇭🇰|HK|Hong
@@ -106,6 +117,7 @@ Download = select,DIRECT,PROXY,香港节点(Fallback),台湾节点(Fallback),美
 日本节点 = url-test,url=http://www.gstatic.com/generate_204,interval=600,tolerance=0,timeout=5,select=0,policy-regex-filter=(?i)日本|🇯🇵|(东|東)京|JP|Japan
 
 香港节点(Fallback) = fallback,url=http://www.gstatic.com/generate_204,interval=600,tolerance=0,timeout=5,select=0,policy-regex-filter=(?i)香港|🇭🇰|HK|Hong
+新加坡节点(Fallback) = fallback,url=http://www.gstatic.com/generate_204,interval=600,tolerance=0,timeout=5,select=0,policy-regex-filter=(?i)狮|獅|🇸🇬|加坡|SG|Singapore
 台湾节点(Fallback) = fallback,url=http://www.gstatic.com/generate_204,interval=600,tolerance=0,timeout=5,select=0,policy-regex-filter=(?i)台(湾|灣)|🇹🇼|TW|Taiwan
 美国节点(Fallback) = fallback,url=http://www.gstatic.com/generate_204,interval=600,tolerance=0,timeout=5,select=0,policy-regex-filter=(?i)美(国|國)|🇺🇸|US|States|American
 
@@ -151,29 +163,51 @@ Download = select,DIRECT,PROXY,香港节点(Fallback),台湾节点(Fallback),美
 
 
 # Telegram
-RULE-SET,https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Telegram/Telegram.yaml,Telegram 
+RULE-SET,https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Telegram/Telegram.list,Telegram 
 # OpenAI
-RULE-SET,https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/OpenAI/OpenAI.yaml,OpenAI
+RULE-SET,https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/OpenAI/OpenAI.list,OpenAI
 # Apple
-RULE-SET,https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Apple/Apple_Classical.yaml,Apple
+RULE-SET,https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Apple/Apple.list,Apple
+RULE-SET,https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Apple/Apple_Domain.list,Apple
 # Microsoft
-RULE-SET,https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Microsoft/Microsoft.yaml,Microsoft
+RULE-SET,https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Microsoft/Microsoft.list,Microsoft
 # 媒体
-RULE-SET,https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/YouTube/YouTube.yaml,YouTube
-RULE-SET,https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Emby/Emby.yaml,Emby 
-RULE-SET,https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Netflix/Netflix.yaml,Netflix
-RULE-SET,https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Disney/Disney.yaml,Disney
-RULE-SET,https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/HBO/HBO.yaml,HBO
+RULE-SET,https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/YouTube/YouTube.list,YouTube
+RULE-SET,https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Netflix/Netflix.list,Netflix
+RULE-SET,https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Disney/Disney.list,Disney
+RULE-SET,https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/HBO/HBO.list,HBO
+RULE-SET,https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Bahamut/Bahamut.list,Bahamut
+RULE-SET,https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/BiliBili/BiliBili.list,BiliBili
+RULE-SET,https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Emby/Emby.list,Emby
+
 # Google
-RULE-SET,https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Google/Google.yaml,Google
+RULE-SET,https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Google/Google.list,Google
+
+# 购物&支付
+RULE-SET,https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/PayPal/PayPal.list,PayPal
+
+# 社交
+RULE-SET,https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/TikTok/TikTok.list,Tiktok
+RULE-SET,https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Twitter/Twitter.list,Twitter
+RULE-SET,https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Instagram/Instagram.list,Instagram
+RULE-SET,https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Facebook/Facebook.list,Facebook
+RULE-SET,https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Discord/Discord.list,Discord
+
+# 游戏
+RULE-SET,https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Steam/Steam.list,Steam
+
+# 音乐
+RULE-SET,https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Spotify/Spotify.list,Spotify
+
 #本地局域网Lan_rule
-RULE-SET,https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Lan/Lan.yaml,DIRECT
+RULE-SET,https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Lan/Lan.list,DIRECT
 # 国内
-RULE-SET,https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/ChinaMax/ChinaMax_Classical.yaml,DIRECT
+RULE-SET,https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/ChinaMax/ChinaMax.list,DIRECT
+RULE-SET,https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/ChinaMax/ChinaMax_Domain.list,DIRECT
 # 表示CN地区的IP分流走直连，GEOIP数据库用来判断IP是否属于CN地区。默认使用Shadowrocket自带的GEOIP数据库，如果您想替换其他数据库，可在 设置 - GeoLite2数据库 里添加和修改。
 GEOIP,CN,DIRECT
 #常用下载软件
-RULE-SET,https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Download/Download.yaml,Download
+RULE-SET,https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Download/Download.list,Download
 # 表示当其他所有规则都匹配不到时才使用FINAL规则的策略。
 FINAL,PROXY
 
