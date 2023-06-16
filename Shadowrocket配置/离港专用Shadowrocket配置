@@ -85,25 +85,25 @@ include =
 # ----------
 
 #分流策略组
-Telegram = select,PROXY,香港节点(Fallback),新加坡节点(Fallback),台湾节点(Fallback),美国节点(Fallback),香港节点,台湾节点,日本节点,新加坡节点,韩国节点,美国节点,interval=86400,timeout=5,select=0,url=http://www.gstatic.com/generate_204
-OpenAI = select,PROXY,香港节点(Fallback),新加坡节点(Fallback),台湾节点(Fallback),美国节点(Fallback),香港节点,台湾节点,日本节点,新加坡节点,韩国节点,美国节点,interval=86400,timeout=5,select=0,url=http://www.gstatic.com/generate_204
-YouTube = select,PROXY,香港节点(Fallback),新加坡节点(Fallback),台湾节点(Fallback),美国节点(Fallback),香港节点,台湾节点,日本节点,新加坡节点,韩国节点,美国节点,interval=86400,timeout=5,select=0,url=http://www.gstatic.com/generate_204
-Netflix = select,PROXY,香港节点(Fallback),新加坡节点(Fallback),台湾节点(Fallback),美国节点(Fallback),香港节点,台湾节点,日本节点,新加坡节点,韩国节点,美国节点,interval=86400,timeout=5,select=0,url=http://www.gstatic.com/generate_204
-Disney = select,PROXY,香港节点(Fallback),新加坡节点(Fallback),台湾节点(Fallback),美国节点(Fallback),香港节点,台湾节点,日本节点,新加坡节点,韩国节点,美国节点,interval=86400,timeout=5,select=0,url=http://www.gstatic.com/generate_204
-HBO = select,PROXY,香港节点(Fallback),新加坡节点(Fallback),台湾节点(Fallback),美国节点(Fallback),香港节点,台湾节点,日本节点,新加坡节点,韩国节点,美国节点,interval=86400,timeout=5,select=0,url=http://www.gstatic.com/generate_204
-Bahamut = select,PROXY,香港节点(Fallback),新加坡节点(Fallback),台湾节点(Fallback),美国节点(Fallback),香港节点,台湾节点,日本节点,新加坡节点,韩国节点,美国节点,interval=86400,timeout=5,select=0,url=http://www.gstatic.com/generate_204
-BiliBili = select,PROXY,香港节点(Fallback),新加坡节点(Fallback),台湾节点(Fallback),美国节点(Fallback),香港节点,台湾节点,日本节点,新加坡节点,韩国节点,美国节点,interval=86400,timeout=5,select=0,url=http://www.gstatic.com/generate_204
+Telegram = select,PROXY,香港节点(Fallback),新加坡节点(Fallback),台湾节点(Fallback),美国节点(Fallback),香港节点,台湾节点,日本节点,新加坡节点,韩国节点,美国节点,interval=86400,timeout=5,select=1,url=http://www.gstatic.com/generate_204
+OpenAI = select,PROXY,香港节点(Fallback),新加坡节点(Fallback),台湾节点(Fallback),美国节点(Fallback),香港节点,台湾节点,日本节点,新加坡节点,韩国节点,美国节点,interval=86400,timeout=5,select=4,url=http://www.gstatic.com/generate_204
+YouTube = select,PROXY,香港节点(Fallback),新加坡节点(Fallback),台湾节点(Fallback),美国节点(Fallback),香港节点,台湾节点,日本节点,新加坡节点,韩国节点,美国节点,interval=86400,timeout=5,select=1,url=http://www.gstatic.com/generate_204
+Netflix = select,PROXY,香港节点(Fallback),新加坡节点(Fallback),台湾节点(Fallback),美国节点(Fallback),香港节点,台湾节点,日本节点,新加坡节点,韩国节点,美国节点,interval=86400,timeout=5,select=2,url=http://www.gstatic.com/generate_204
+Disney = select,PROXY,香港节点(Fallback),新加坡节点(Fallback),台湾节点(Fallback),美国节点(Fallback),香港节点,台湾节点,日本节点,新加坡节点,韩国节点,美国节点,interval=86400,timeout=5,select=2,url=http://www.gstatic.com/generate_204
+HBO = select,PROXY,香港节点(Fallback),新加坡节点(Fallback),台湾节点(Fallback),美国节点(Fallback),香港节点,台湾节点,日本节点,新加坡节点,韩国节点,美国节点,interval=86400,timeout=5,select=2,url=http://www.gstatic.com/generate_204
+Bahamut = select,PROXY,香港节点(Fallback),新加坡节点(Fallback),台湾节点(Fallback),美国节点(Fallback),香港节点,台湾节点,日本节点,新加坡节点,韩国节点,美国节点,interval=86400,timeout=5,select=2,url=http://www.gstatic.com/generate_204
+BiliBili = select,DIRECT,PROXY,香港节点(Fallback),新加坡节点(Fallback),台湾节点(Fallback),美国节点(Fallback),香港节点,台湾节点,日本节点,新加坡节点,韩国节点,美国节点,interval=86400,timeout=5,select=0,url=http://www.gstatic.com/generate_204
 Emby = select,DIRECT,PROXY,香港节点(Fallback),新加坡节点(Fallback),台湾节点(Fallback),美国节点(Fallback),香港节点,台湾节点,日本节点,新加坡节点,韩国节点,美国节点,interval=86400,timeout=5,select=0,url=http://www.gstatic.com/generate_204
-Google = select,PROXY,香港节点(Fallback),新加坡节点(Fallback),台湾节点(Fallback),美国节点(Fallback),香港节点,台湾节点,日本节点,新加坡节点,韩国节点,美国节点,interval=86400,timeout=5,select=0,url=http://www.gstatic.com/generate_204
-Tiktok  = select,PROXY,香港节点(Fallback),新加坡节点(Fallback),台湾节点(Fallback),美国节点(Fallback),香港节点,台湾节点,日本节点,新加坡节点,韩国节点,美国节点,interval=86400,timeout=5,select=0,url=http://www.gstatic.com/generate_204
-Twitter = select,PROXY,香港节点(Fallback),新加坡节点(Fallback),台湾节点(Fallback),美国节点(Fallback),香港节点,台湾节点,日本节点,新加坡节点,韩国节点,美国节点,interval=86400,timeout=5,select=0,url=http://www.gstatic.com/generate_204
-Instagram = select,PROXY,香港节点(Fallback),新加坡节点(Fallback),台湾节点(Fallback),美国节点(Fallback),香港节点,台湾节点,日本节点,新加坡节点,韩国节点,美国节点,interval=86400,timeout=5,select=0,url=http://www.gstatic.com/generate_204
-Facebook = select,PROXY,香港节点(Fallback),新加坡节点(Fallback),台湾节点(Fallback),美国节点(Fallback),香港节点,台湾节点,日本节点,新加坡节点,韩国节点,美国节点,interval=86400,timeout=5,select=0,url=http://www.gstatic.com/generate_204
-Spotify = select,PROXY,香港节点(Fallback),新加坡节点(Fallback),台湾节点(Fallback),美国节点(Fallback),香港节点,台湾节点,日本节点,新加坡节点,韩国节点,美国节点,interval=86400,timeout=5,select=0,url=http://www.gstatic.com/generate_204
-Discord = select,PROXY,香港节点(Fallback),新加坡节点(Fallback),台湾节点(Fallback),美国节点(Fallback),香港节点,台湾节点,日本节点,新加坡节点,韩国节点,美国节点,interval=86400,timeout=5,select=0,url=http://www.gstatic.com/generate_204
+Google = select,PROXY,香港节点(Fallback),新加坡节点(Fallback),台湾节点(Fallback),美国节点(Fallback),香港节点,台湾节点,日本节点,新加坡节点,韩国节点,美国节点,interval=86400,timeout=5,select=4,url=http://www.gstatic.com/generate_204
+Tiktok  = select,PROXY,香港节点(Fallback),新加坡节点(Fallback),台湾节点(Fallback),美国节点(Fallback),香港节点,台湾节点,日本节点,新加坡节点,韩国节点,美国节点,interval=86400,timeout=5,select=4,url=http://www.gstatic.com/generate_204
+Twitter = select,PROXY,香港节点(Fallback),新加坡节点(Fallback),台湾节点(Fallback),美国节点(Fallback),香港节点,台湾节点,日本节点,新加坡节点,韩国节点,美国节点,interval=86400,timeout=5,select=4,url=http://www.gstatic.com/generate_204
+Instagram = select,PROXY,香港节点(Fallback),新加坡节点(Fallback),台湾节点(Fallback),美国节点(Fallback),香港节点,台湾节点,日本节点,新加坡节点,韩国节点,美国节点,interval=86400,timeout=5,select=4,url=http://www.gstatic.com/generate_204
+Facebook = select,PROXY,香港节点(Fallback),新加坡节点(Fallback),台湾节点(Fallback),美国节点(Fallback),香港节点,台湾节点,日本节点,新加坡节点,韩国节点,美国节点,interval=86400,timeout=5,select=4,url=http://www.gstatic.com/generate_204
+Spotify = select,PROXY,香港节点(Fallback),新加坡节点(Fallback),台湾节点(Fallback),美国节点(Fallback),香港节点,台湾节点,日本节点,新加坡节点,韩国节点,美国节点,interval=86400,timeout=5,select=4,url=http://www.gstatic.com/generate_204
+Discord = select,PROXY,香港节点(Fallback),新加坡节点(Fallback),台湾节点(Fallback),美国节点(Fallback),香港节点,台湾节点,日本节点,新加坡节点,韩国节点,美国节点,interval=86400,timeout=5,select=4,url=http://www.gstatic.com/generate_204
 
-PayPal = select,PROXY,香港节点(Fallback),新加坡节点(Fallback),台湾节点(Fallback),美国节点(Fallback),香港节点,台湾节点,日本节点,新加坡节点,韩国节点,美国节点,interval=86400,timeout=5,select=0,url=http://www.gstatic.com/generate_204
-Steam = select,PROXY,香港节点(Fallback),新加坡节点(Fallback),台湾节点(Fallback),美国节点(Fallback),香港节点,台湾节点,日本节点,新加坡节点,韩国节点,美国节点,interval=86400,timeout=5,select=0,url=http://www.gstatic.com/generate_204
+PayPal = select,PROXY,香港节点(Fallback),新加坡节点(Fallback),台湾节点(Fallback),美国节点(Fallback),香港节点,台湾节点,日本节点,新加坡节点,韩国节点,美国节点,interval=86400,timeout=5,select=4,url=http://www.gstatic.com/generate_204
+Steam = select,DIRECT,PROXY,香港节点(Fallback),新加坡节点(Fallback),台湾节点(Fallback),美国节点(Fallback),香港节点,台湾节点,日本节点,新加坡节点,韩国节点,美国节点,interval=86400,timeout=5,select=0,url=http://www.gstatic.com/generate_204
 
 Apple = select,DIRECT,PROXY,香港节点(Fallback),新加坡节点(Fallback),台湾节点(Fallback),美国节点(Fallback),香港节点,台湾节点,日本节点,新加坡节点,韩国节点,美国节点,interval=86400,timeout=5,select=0,url=http://www.gstatic.com/generate_204
 Microsoft = select,DIRECT,PROXY,香港节点(Fallback),新加坡节点(Fallback),台湾节点(Fallback),美国节点(Fallback),香港节点,台湾节点,日本节点,新加坡节点,韩国节点,美国节点,interval=86400,timeout=5,select=0,url=http://www.gstatic.com/generate_204
