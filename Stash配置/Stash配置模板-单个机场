@@ -60,13 +60,13 @@ dns:
     - '*.battle.net'
 
 #获取机场流量套餐剩余/到期信息
-subscribe-url: "你想显示机场流量套餐剩余/到期信息的订阅"
+subscribe-url: ""
 
 #远程订阅
 proxy-providers:
   离港机场名字01_Subscription: &离港机场名字01 #建立锚点
     type: http
-    url: "你的第一个机场Stash订阅"
+    url: ""
     interval: 86400
     path: ./providers/proxy/离港机场名字01.yaml
     health-check:
