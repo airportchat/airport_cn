@@ -17,7 +17,7 @@ allow-lan: true
 bind-address: "*"
 mode: rule
 log-level: info
-external-controller: 127.0.0.1:9090
+#external-controller: 127.0.0.1:9090 #设置外部控制器的地址和端口，用于远程管理代理服务，我这里默认不设置
 profile:
   store-selected: false
   tracing: false
