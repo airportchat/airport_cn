@@ -60,13 +60,13 @@ dns:
     - '*.battle.net'
 
 #获取机场流量套餐剩余/到期信息
-subscribe-url: ""
+subscribe-url: "https://api.v1.mk/sub?target=clash&url=https%3A%2F%2Fd1.mk%2FqZsbWMA&remove_emoji=false"
 
 #远程订阅
 proxy-providers:
   离港机场名字01_Subscription: &离港机场名字01 #建立锚点
     type: http
-    url: ""
+    url: "https://api.v1.mk/sub?target=clash&url=https%3A%2F%2Fd1.mk%2FqZsbWMA&remove_emoji=false"
     interval: 86400
     path: ./providers/proxy/离港机场名字01.yaml
     health-check:
