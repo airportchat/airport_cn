@@ -1,11 +1,12 @@
-#####使用前必读######
+#####使用前必读(不必删除必读内容)######
 #您好，这里离港专用Stash配置模板(单机场)，欢迎加入频道&群组和大佬们一起讨论：
 #优质离港机场频道：https://t.me/airport_cn
 #离港vip候机室：https://t.me/airport_chat
 #规则来自blackmatrix7大佬：https://github.com/blackmatrix7/ios_rule_script/tree/master/rule
+
 #使用方法：
-#第一步：将此界面所有代码复制到本地用文本编辑器(记事本/Notepad++等)打开，一般是Ctrl+H组合键调出替换窗口，将“离港机场名字01”全部替换成你的机场名字即可
-#第二步:将65、71行中url换成你的机场stash订阅后导入clash即可！(特别注意：url的引号要保留)
+#第一步：Ctrl+A全选将此界面所有内容复制到本地用文本编辑器(记事本/Notepad++等)打开，一般是Ctrl+H组合键调出替换窗口，将“离港机场名字01”全部替换成你的机场名字即可！
+#第二步:将63、69行中url换成你的机场stash订阅后导入即可！(特别注意：url的引号要保留)
 
 port: 7890
 socks-port: 7891
@@ -23,20 +24,26 @@ profile:
   store-fake-ip: false
 dns:
   enable: true
+  ipv6: false
   listen: 0.0.0.0:1053
   enhanced-mode: fake-ip
   fake-ip-range: 198.18.0.1/16
   use-hosts: true
-
   default-nameserver:
     - 114.114.114.114
     - 119.29.29.29
     - 223.5.5.5
-
   nameserver:
     - https://doh.pub/dns-query
     - https://dns.alidns.com/dns-query
-
+  fallback:
+    - 1.1.1.1
+    - 8.8.8.8
+  fallback-filter:
+    geoip: true
+    geoip-code: CN
+    ipcidr:
+      - 240.0.0.0/4
   fake-ip-filter:
     - '*.lan'
     - localhost.ptlogin2.qq.com
@@ -51,15 +58,6 @@ dns:
     - '*.battlenet.com'
     - '*.blzstatic.cn'
     - '*.battle.net'
-
-  fallback:
-    - 1.1.1.1
-    - 8.8.8.8
-  fallback-filter:
-    geoip: true
-    geoip-code: CN
-    ipcidr:
-      - 240.0.0.0/4
 
 #获取机场流量套餐剩余/到期信息
 subscribe-url: "你想显示机场流量套餐剩余/到期信息的订阅"
@@ -119,6 +117,7 @@ proxy-groups:
       - DIRECT
       - 离港机场名字01
       - 离港机场名字01♡香港节点(Fallback)
+      - 离港机场名字01♡新加坡节点(Fallback)
       - 离港机场名字01♡美国节点(Fallback)
       - 离港机场名字01♡香港节点
       - 离港机场名字01♡台湾节点
@@ -134,6 +133,7 @@ proxy-groups:
     proxies:
       - DIRECT
       - 离港机场名字01♡香港节点(Fallback)
+      - 离港机场名字01♡新加坡节点(Fallback)
       - 离港机场名字01♡美国节点(Fallback)
       - 离港机场名字01♡香港节点
       - 离港机场名字01♡台湾节点
@@ -149,6 +149,7 @@ proxy-groups:
     proxies:
       - 离港机场名字01
       - 离港机场名字01♡香港节点(Fallback)
+      - 离港机场名字01♡新加坡节点(Fallback)
       - 离港机场名字01♡美国节点(Fallback)
       - 离港机场名字01♡香港节点
       - 离港机场名字01♡台湾节点
@@ -164,6 +165,7 @@ proxy-groups:
     proxies:
       - 离港机场名字01
       - 离港机场名字01♡香港节点(Fallback)
+      - 离港机场名字01♡新加坡节点(Fallback)
       - 离港机场名字01♡美国节点(Fallback)
       - 离港机场名字01♡香港节点
       - 离港机场名字01♡台湾节点
@@ -180,6 +182,7 @@ proxy-groups:
     proxies:
       - 离港机场名字01
       - 离港机场名字01♡香港节点(Fallback)
+      - 离港机场名字01♡新加坡节点(Fallback)
       - 离港机场名字01♡美国节点(Fallback)
       - 离港机场名字01♡香港节点
       - 离港机场名字01♡台湾节点
@@ -195,6 +198,7 @@ proxy-groups:
     proxies:
       - 离港机场名字01
       - 离港机场名字01♡香港节点(Fallback)
+      - 离港机场名字01♡新加坡节点(Fallback)
       - 离港机场名字01♡美国节点(Fallback)
       - 离港机场名字01♡香港节点
       - 离港机场名字01♡台湾节点
@@ -210,6 +214,7 @@ proxy-groups:
     proxies:
       - 离港机场名字01
       - 离港机场名字01♡香港节点(Fallback)
+      - 离港机场名字01♡新加坡节点(Fallback)
       - 离港机场名字01♡美国节点(Fallback)
       - 离港机场名字01♡香港节点
       - 离港机场名字01♡台湾节点
@@ -225,6 +230,40 @@ proxy-groups:
     proxies:
       - 离港机场名字01
       - 离港机场名字01♡香港节点(Fallback)
+      - 离港机场名字01♡新加坡节点(Fallback)
+      - 离港机场名字01♡美国节点(Fallback)
+      - 离港机场名字01♡香港节点
+      - 离港机场名字01♡台湾节点
+      - 离港机场名字01♡新加坡节点
+      - 离港机场名字01♡美国节点
+      - 离港机场名字01♡日本节点
+    use:        
+      - 离港机场名字01_Filter_All
+
+  - name: BiliBili
+    type: select
+    icon: https://raw.githubusercontent.com/airportchat/Logo/main/app_logo/BiliBili.png
+    proxies:
+      - DIRECT
+      - 离港机场名字01
+      - 离港机场名字01♡香港节点(Fallback)
+      - 离港机场名字01♡新加坡节点(Fallback)
+      - 离港机场名字01♡美国节点(Fallback)
+      - 离港机场名字01♡香港节点
+      - 离港机场名字01♡台湾节点
+      - 离港机场名字01♡新加坡节点
+      - 离港机场名字01♡美国节点
+      - 离港机场名字01♡日本节点
+    use:        
+      - 离港机场名字01_Filter_All
+
+  - name: Spotify
+    type: select
+    icon: https://raw.githubusercontent.com/airportchat/Logo/main/app_logo/Spotify.png
+    proxies:
+      - 离港机场名字01
+      - 离港机场名字01♡香港节点(Fallback)
+      - 离港机场名字01♡新加坡节点(Fallback)
       - 离港机场名字01♡美国节点(Fallback)
       - 离港机场名字01♡香港节点
       - 离港机场名字01♡台湾节点
@@ -240,6 +279,24 @@ proxy-groups:
     proxies:
       - 离港机场名字01
       - 离港机场名字01♡香港节点(Fallback)
+      - 离港机场名字01♡新加坡节点(Fallback)
+      - 离港机场名字01♡美国节点(Fallback)
+      - 离港机场名字01♡香港节点
+      - 离港机场名字01♡台湾节点
+      - 离港机场名字01♡新加坡节点
+      - 离港机场名字01♡美国节点
+      - 离港机场名字01♡日本节点
+    use:        
+      - 离港机场名字01_Filter_All
+
+  - name: Steam
+    type: select
+    icon: https://raw.githubusercontent.com/airportchat/Logo/main/app_logo/Steam.png
+    proxies:
+      - DIRECT
+      - 离港机场名字01
+      - 离港机场名字01♡香港节点(Fallback)
+      - 离港机场名字01♡新加坡节点(Fallback)
       - 离港机场名字01♡美国节点(Fallback)
       - 离港机场名字01♡香港节点
       - 离港机场名字01♡台湾节点
@@ -256,6 +313,56 @@ proxy-groups:
       - DIRECT
       - 离港机场名字01
       - 离港机场名字01♡香港节点(Fallback)
+      - 离港机场名字01♡新加坡节点(Fallback)
+      - 离港机场名字01♡美国节点(Fallback)
+      - 离港机场名字01♡香港节点
+      - 离港机场名字01♡台湾节点
+      - 离港机场名字01♡新加坡节点
+      - 离港机场名字01♡美国节点
+      - 离港机场名字01♡日本节点
+    use:        
+      - 离港机场名字01_Filter_All
+
+  - name: TikTok
+    type: select
+    icon: https://raw.githubusercontent.com/airportchat/Logo/main/app_logo/TikTok.png
+    proxies:
+      - 离港机场名字01
+      - 离港机场名字01♡香港节点(Fallback)
+      - 离港机场名字01♡新加坡节点(Fallback)
+      - 离港机场名字01♡美国节点(Fallback)
+      - 离港机场名字01♡香港节点
+      - 离港机场名字01♡台湾节点
+      - 离港机场名字01♡新加坡节点
+      - 离港机场名字01♡美国节点
+      - 离港机场名字01♡日本节点
+    use:        
+      - 离港机场名字01_Filter_All
+
+  - name: Twitter
+    type: select
+    icon: https://raw.githubusercontent.com/airportchat/Logo/main/app_logo/Twitter.png
+    proxies:
+      - 离港机场名字01
+      - 离港机场名字01♡香港节点(Fallback)
+      - 离港机场名字01♡新加坡节点(Fallback)
+      - 离港机场名字01♡美国节点(Fallback)
+      - 离港机场名字01♡香港节点
+      - 离港机场名字01♡台湾节点
+      - 离港机场名字01♡新加坡节点
+      - 离港机场名字01♡美国节点
+      - 离港机场名字01♡日本节点
+    use:        
+      - 离港机场名字01_Filter_All
+
+  - name: Weibo
+    type: select
+    icon: https://raw.githubusercontent.com/airportchat/Logo/main/app_logo/Weibo.png
+    proxies:
+      - DIRECT
+      - 离港机场名字01
+      - 离港机场名字01♡香港节点(Fallback)
+      - 离港机场名字01♡新加坡节点(Fallback)
       - 离港机场名字01♡美国节点(Fallback)
       - 离港机场名字01♡香港节点
       - 离港机场名字01♡台湾节点
@@ -272,6 +379,7 @@ proxy-groups:
       - DIRECT
       - 离港机场名字01
       - 离港机场名字01♡香港节点(Fallback)
+      - 离港机场名字01♡新加坡节点(Fallback)
       - 离港机场名字01♡美国节点(Fallback)
       - 离港机场名字01♡香港节点
       - 离港机场名字01♡台湾节点
@@ -288,6 +396,7 @@ proxy-groups:
       - DIRECT
       - 离港机场名字01
       - 离港机场名字01♡香港节点(Fallback)
+      - 离港机场名字01♡新加坡节点(Fallback)
       - 离港机场名字01♡美国节点(Fallback)
       - 离港机场名字01♡香港节点
       - 离港机场名字01♡台湾节点
@@ -297,6 +406,22 @@ proxy-groups:
     use:        
       - 离港机场名字01_Filter_All
 
+  - name: Download
+    type: select
+    icon: https://raw.githubusercontent.com/airportchat/Logo/main/app_logo/Download.png
+    proxies:
+      - DIRECT
+      - 离港机场名字01
+      - 离港机场名字01♡香港节点(Fallback)
+      - 离港机场名字01♡新加坡节点(Fallback)
+      - 离港机场名字01♡美国节点(Fallback)
+      - 离港机场名字01♡香港节点
+      - 离港机场名字01♡台湾节点
+      - 离港机场名字01♡新加坡节点
+      - 离港机场名字01♡美国节点
+      - 离港机场名字01♡日本节点
+    use:        
+      - 离港机场名字01_Filter_All
 
 #离港机场名字01部分
   - name: 离港机场名字01♡香港节点(Fallback)
@@ -308,6 +433,16 @@ proxy-groups:
     proxies:
     use:
       - 离港机场名字01_Filter_HK
+
+  - name: 离港机场名字01♡新加坡节点(Fallback)
+    type: fallback
+    icon: https://raw.githubusercontent.com/airportchat/Logo/main/app_logo/SG.png
+    url: https://www.gstatic.com/generate_204
+    interval: 60
+    lazy: true
+    proxies:
+    use:
+      - 离港机场名字01_Filter_SG
 
   - name: 离港机场名字01♡美国节点(Fallback)
     type: fallback
@@ -373,6 +508,14 @@ rule-providers:
     path: ./RuleSet/ChinaMax_Classical.yaml
     interval: 86400
 
+  #常用下载软件
+  Download_rule:
+    type: http
+    behavior: classical
+    url: "https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Download/Download.yaml"
+    path: ./RuleSet/Download.yaml
+    interval: 86400
+
   #流媒体
   YouTube_rule:
     type: http
@@ -425,6 +568,14 @@ rule-providers:
     path: ./RuleSet/Google.yaml
     interval: 86400
 
+  #Steam
+  Steam_rule:
+    type: http
+    behavior: classical
+    url: "https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Steam/Steam.yaml"
+    path: ./RuleSet/Steam.yaml
+    interval: 86400
+
   #Apple
   Apple_Classical_rule:
     type: http
@@ -449,6 +600,46 @@ rule-providers:
     path: ./RuleSet/OpenAI.yaml
     interval: 86400
 
+  #Spotify
+  Spotify_rule:
+    type: http
+    behavior: classical
+    url: "https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Spotify/Spotify.yaml"
+    path: ./RuleSet/Spotify.yaml
+    interval: 86400
+
+  #TikTok
+  TikTok_rule:
+    type: http
+    behavior: classical
+    url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/TikTok/TikTok.yaml"
+    path: ./RuleSet/TikTok.yaml
+    interval: 86400
+
+  #BiliBili
+  BiliBili_rule:
+    type: http
+    behavior: classical
+    url: "https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/BiliBili/BiliBili.yaml"
+    path: ./RuleSet/BiliBili.yaml
+    interval: 86400
+
+  #Twitter
+  Twitter_rule:
+    type: http
+    behavior: classical
+    url: "https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Twitter/Twitter.yaml"
+    path: ./RuleSet/Twitter.yaml
+    interval: 86400
+
+  #Weibo
+  Weibo_rule:
+    type: http
+    behavior: classical
+    url: "https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Weibo/Weibo.yaml"
+    path: ./RuleSet/Weibo.yaml
+    interval: 86400
+
 
 rules:
   # Telegram
@@ -469,9 +660,22 @@ rules:
   - RULE-SET,Netflix_rule,Netflix
   - RULE-SET,Disney_rule,Disney
   - RULE-SET,HBO_rule,HBO
+  - RULE-SET,BiliBili_rule,BiliBili
+
+  # Steam
+  - RULE-SET,Steam_rule,Steam
 
   # Google
   - RULE-SET,Google_rule,Google
+
+  # 音乐
+  - RULE-SET,Spotify_rule,Spotify
+
+  # 社交APP
+  - RULE-SET,TikTok_rule,TikTok
+  - RULE-SET,Twitter_rule,Twitter
+  - RULE-SET,Weibo_rule,Weibo
+
 
   #本地局域网
   - RULE-SET,Lan_rule,DIRECT
@@ -479,6 +683,9 @@ rules:
   # 国内
   - RULE-SET,China_rule,DIRECT,no-resolve  #no-resolve加上就是不解析DNS
   - GEOIP,CN,DIRECT
+
+  #常用下载软件
+  - RULE-SET,Download_rule,Download
 
   # 必须
   - MATCH,Final_Match
