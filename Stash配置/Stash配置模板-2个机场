@@ -5,7 +5,7 @@
 #规则来自blackmatrix7大佬：https://github.com/blackmatrix7/ios_rule_script/tree/master/rule
 
 #使用方法：
-#第一步：Ctrl+A全选将此界面所有内容复制到本地用文本编辑器(记事本/Notepad++等)打开，一般是Ctrl+H组合键调出替换窗口，将“离港机场名字01”、“离港机场名字02”全部替换成你的机场名字即可！
+#第一步：Ctrl+A全选将此界面所有内容复制到本地用文本编辑器(记事本/Notepad++等)打开，一般是Ctrl+H组合键调出替换窗口，将“aiport_cn_01”、“aiport_cn_02”全部替换成你的机场名字即可！
 #第二步:将63、69、79行中url分别换成你的机场stash订阅后导入即可！(特别注意：url的引号要保留)
 
 port: 7890
