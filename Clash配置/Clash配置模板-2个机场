@@ -5,7 +5,7 @@
 #规则来自blackmatrix7大佬：https://github.com/blackmatrix7/ios_rule_script/tree/master/rule
 #使用方法：
 #第一步：将此界面所有代码复制到本地用文本编辑器(记事本/Notepad++等)打开，一般是Ctrl+H组合键调出替换窗口，将“离港机场名字01”和“离港机场名字02”分别全部替换成你的机场名字即可
-#第二步:将68行和78行中url换成你的机场clash订阅后导入clash即可！(特别注意：url的引号要保留)
+#第二步:将65行和75行中url换成你的机场clash订阅后导入clash即可！(特别注意：url的引号要保留)
 
 port: 7890
 socks-port: 7891
@@ -16,27 +16,33 @@ allow-lan: true
 bind-address: "*"
 mode: rule
 log-level: info
-external-controller: 127.0.0.1:9090
+#external-controller: 127.0.0.1:9090 #设置外部控制器的地址和端口，用于远程管理代理服务，我这里默认不设置
 profile:
   store-selected: false
   tracing: false
   store-fake-ip: false
 dns:
   enable: true
+  ipv6: false
   listen: 0.0.0.0:1053
   enhanced-mode: fake-ip
   fake-ip-range: 198.18.0.1/16
   use-hosts: true
-
   default-nameserver:
     - 114.114.114.114
     - 119.29.29.29
     - 223.5.5.5
-
   nameserver:
     - https://doh.pub/dns-query
     - https://dns.alidns.com/dns-query
-
+  fallback:
+    - 1.1.1.1
+    - 8.8.8.8
+  fallback-filter:
+    geoip: true
+    geoip-code: CN
+    ipcidr:
+      - 240.0.0.0/4
   fake-ip-filter:
     - '*.lan'
     - localhost.ptlogin2.qq.com
@@ -51,15 +57,6 @@ dns:
     - '*.battlenet.com'
     - '*.blzstatic.cn'
     - '*.battle.net'
-
-  fallback:
-    - 1.1.1.1
-    - 8.8.8.8
-  fallback-filter:
-    geoip: true
-    geoip-code: CN
-    ipcidr:
-      - 240.0.0.0/4
 
 #远程订阅
 proxy-providers:
