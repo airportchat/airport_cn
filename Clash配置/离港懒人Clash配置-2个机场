@@ -1,13 +1,15 @@
-#####使用前必读######
-#您好，这里离港懒人Clash配置模板(此模板是2个机场，如果你还需要加可以按照格式添加即可)，欢迎加入频道&群组和大佬们一起讨论：
+#####使用前必读(不必删除必读内容)######
+#您好，这里离港懒人Clash配置模板(2个机场)，欢迎加入频道&群组和大佬们一起讨论：
 #优质离港机场频道：https://t.me/airport_cn
 #离港vip候机室：https://t.me/airport_chat
 #规则来自blackmatrix7大佬：https://github.com/blackmatrix7/ios_rule_script/tree/master/rule
+#update：2023.09.16
 #使用方法：
-#第一步：将此界面所有代码复制到本地用文本编辑器(记事本/Notepad++等)打开，一般是Ctrl+H组合键调出替换窗口，将“离港机场名字01”和“离港机场名字02”分别全部替换成你的机场名字即可
-#第二步:将60行和70行中url换成你的机场clash订阅后导入clash即可！(特别注意：1.url的引号要保留;2.如果订阅下载不下来可以尝试在订阅后面加 &flag=clash)
+#第一步：Ctrl+A全选将此界面所有内容复制到本地用文本编辑器(记事本/Notepad++等)打开，一般是Ctrl+H组合键调出替换窗口，将“aiport01”、“aiport02”全部替换成你的机场名字即可！
+#第二步:将65、75行中url分别换成你的机场Clash订阅后导入即可！(特别注意：1.url的引号要保留;2.如果订阅下载不下来可以尝试在订阅后面加 &flag=clash)
 #update：2023.09.16
 #取消dns中的fallback参数，YouTube等外网打开有明显的提升-2023.09.16
+
 
 
 
@@ -53,23 +55,26 @@ dns:
     - '*.blzstatic.cn'
     - '*.battle.net'
 
+
+
+
 #远程订阅
 proxy-providers:
-  离港机场名字01_Subscription: &离港机场名字01 #建立锚点
+  aiport01_Subscription: &aiport01 #建立锚点
     type: http
-    url: "你的第一个机场clash订阅"
+    url: "你的第一个机场Clash订阅"
     interval: 86400
-    path: ./providers/proxy/离港机场名字01.yaml
+    path: ./providers/proxy/aiport01.yaml
     health-check:
       enable: true
       interval: 600
       url: https://www.gstatic.com/generate_204
 
-  离港机场名字02_Subscription: &离港机场名字02 #建立锚点
+  aiport02_Subscription: &aiport02 #建立锚点
     type: http
-    url: "你的第二个机场clash订阅"
+    url: "你的第二个机场Clash订阅"
     interval: 86400
-    path: ./providers/proxy/离港机场名字02.yaml
+    path: ./providers/proxy/aiport02.yaml
     health-check:
       enable: true
       interval: 600
@@ -83,464 +88,697 @@ proxy-providers:
 #   ^(?!.*(A|B))     节点名既不含有 A 也不含有 B
 
 #订阅正则提取分组
-#离港机场名字01部分
-  离港机场名字01_Filter_All:
-    <<: *离港机场名字01
+#aiport01部分
+  aiport01_Filter_All:
+    <<: *aiport01
 
-  离港机场名字01_Filter_HK:
-    <<: *离港机场名字01
+  aiport01_Filter_HK:
+    <<: *aiport01
     filter: (?i)香港|🇭🇰|HK|Hong
 
-  离港机场名字01_Filter_TW:
-    <<: *离港机场名字01
+  aiport01_Filter_TW:
+    <<: *aiport01
     filter: (?i)台(湾|灣)|🇹🇼|TW|Taiwan
 
-  离港机场名字01_Filter_SG:
-    <<: *离港机场名字01
+  aiport01_Filter_SG:
+    <<: *aiport01
     filter: (?i)狮|獅|🇸🇬|加坡|SG|Singapore
 
-  离港机场名字01_Filter_US:
-    <<: *离港机场名字01
+  aiport01_Filter_US:
+    <<: *aiport01
     filter: (?i)美(国|國)|🇺🇸|US|States|American
 
-  离港机场名字01_Filter_JP:
-    <<: *离港机场名字01
+  aiport01_Filter_JP:
+    <<: *aiport01
     filter: (?i)日本|🇯🇵|(东|東)京|JP|Japan
 
 
-#离港机场名字02部分
-  离港机场名字02_Filter_All:
-    <<: *离港机场名字02
+#aiport02部分
+  aiport02_Filter_All:
+    <<: *aiport02
 
-  离港机场名字02_Filter_HK:
-    <<: *离港机场名字02
+  aiport02_Filter_HK:
+    <<: *aiport02
     filter: (?i)香港|🇭🇰|HK|Hong
 
-  离港机场名字02_Filter_TW:
-    <<: *离港机场名字02
+  aiport02_Filter_TW:
+    <<: *aiport02
     filter: (?i)台(湾|灣)|🇹🇼|TW|Taiwan
 
-  离港机场名字02_Filter_SG:
-    <<: *离港机场名字02
+  aiport02_Filter_SG:
+    <<: *aiport02
     filter: (?i)狮|獅|🇸🇬|加坡|SG|Singapore
 
-  离港机场名字02_Filter_US:
-    <<: *离港机场名字02
+  aiport02_Filter_US:
+    <<: *aiport02
     filter: (?i)美(国|國)|🇺🇸|US|States|American
 
-  离港机场名字02_Filter_JP:
-    <<: *离港机场名字02
+  aiport02_Filter_JP:
+    <<: *aiport02
     filter: (?i)日本|🇯🇵|(东|東)京|JP|Japan
+
 
 #策略分组
 proxy-groups:
   - name: Final_Match
     type: select
-    proxies:        
-      - DIRECT
-      - 离港机场名字01
-      - 离港机场名字02
-      - 离港机场名字01♡香港节点(Fallback)
-      - 离港机场名字01♡美国节点(Fallback)
-      - 离港机场名字01♡香港节点
-      - 离港机场名字01♡台湾节点
-      - 离港机场名字01♡新加坡节点
-      - 离港机场名字01♡美国节点
-      - 离港机场名字01♡日本节点
-      - 离港机场名字02♡香港节点(Fallback)
-      - 离港机场名字02♡美国节点(Fallback)
-      - 离港机场名字02♡香港节点
-      - 离港机场名字02♡台湾节点
-      - 离港机场名字02♡新加坡节点
-      - 离港机场名字02♡美国节点
-      - 离港机场名字02♡日本节点
-    use:        
-      - 离港机场名字01_Filter_All
-      - 离港机场名字02_Filter_All
-
-  - name: 离港机场名字01
-    type: select
+    icon: https://raw.githubusercontent.com/airportchat/Logo/main/airport_logo/%E7%A6%BB%E6%B8%AF.png
     proxies:
       - DIRECT
-      - 离港机场名字01♡香港节点(Fallback)
-      - 离港机场名字01♡美国节点(Fallback)
-      - 离港机场名字01♡香港节点
-      - 离港机场名字01♡台湾节点
-      - 离港机场名字01♡新加坡节点
-      - 离港机场名字01♡美国节点
-      - 离港机场名字01♡日本节点
+      - aiport01
+      - aiport02
+      - aiport01♡香港节点(Fallback)
+      - aiport01♡新加坡节点(Fallback)
+      - aiport01♡美国节点(Fallback)
+      - aiport01♡香港节点
+      - aiport01♡台湾节点
+      - aiport01♡新加坡节点
+      - aiport01♡美国节点
+      - aiport01♡日本节点
+      - aiport02♡香港节点(Fallback)
+      - aiport02♡新加坡节点(Fallback)
+      - aiport02♡美国节点(Fallback)
+      - aiport02♡香港节点
+      - aiport02♡台湾节点
+      - aiport02♡新加坡节点
+      - aiport02♡美国节点
+      - aiport02♡日本节点
     use:        
-      - 离港机场名字01_Filter_All
+      - aiport01_Filter_All
+      - aiport02_Filter_All
 
-  - name: 离港机场名字02
+  - name: aiport01
     type: select
-    proxies:        
-      - DIRECT
-      - 离港机场名字02♡香港节点(Fallback)
-      - 离港机场名字02♡美国节点(Fallback)
-      - 离港机场名字02♡香港节点
-      - 离港机场名字02♡台湾节点
-      - 离港机场名字02♡新加坡节点
-      - 离港机场名字02♡美国节点
-      - 离港机场名字02♡日本节点
+    icon: https://raw.githubusercontent.com/airportchat/Logo/main/airport_logo/Nexitally.png
+    proxies:
+      - aiport01♡香港节点(Fallback)
+      - aiport01♡新加坡节点(Fallback)
+      - aiport01♡美国节点(Fallback)
+      - aiport01♡香港节点
+      - aiport01♡台湾节点
+      - aiport01♡新加坡节点
+      - aiport01♡美国节点
+      - aiport01♡日本节点
     use:        
-      - 离港机场名字02_Filter_All
+      - aiport01_Filter_All
+
+  - name: aiport02
+    type: select
+    icon: https://raw.githubusercontent.com/airportchat/Logo/main/airport_logo/Amy.png
+    proxies:
+      - aiport02♡香港节点(Fallback)
+      - aiport02♡新加坡节点(Fallback)
+      - aiport02♡美国节点(Fallback)
+      - aiport02♡香港节点
+      - aiport02♡台湾节点
+      - aiport02♡新加坡节点
+      - aiport02♡美国节点
+      - aiport02♡日本节点
+    use:        
+      - aiport02_Filter_All
 
   - name: Telegram
     type: select
-    proxies:        
-      - 离港机场名字01
-      - 离港机场名字02
-      - 离港机场名字01♡香港节点(Fallback)
-      - 离港机场名字01♡美国节点(Fallback)
-      - 离港机场名字01♡香港节点
-      - 离港机场名字01♡台湾节点
-      - 离港机场名字01♡新加坡节点
-      - 离港机场名字01♡美国节点
-      - 离港机场名字01♡日本节点
-      - 离港机场名字02♡香港节点(Fallback)
-      - 离港机场名字02♡美国节点(Fallback)
-      - 离港机场名字02♡香港节点
-      - 离港机场名字02♡台湾节点
-      - 离港机场名字02♡新加坡节点
-      - 离港机场名字02♡美国节点
-      - 离港机场名字02♡日本节点
+    icon: https://raw.githubusercontent.com/airportchat/Logo/main/app_logo/Telegram.png
+    proxies:
+      - aiport01
+      - aiport02
+      - aiport01♡香港节点(Fallback)
+      - aiport01♡新加坡节点(Fallback)
+      - aiport01♡美国节点(Fallback)
+      - aiport01♡香港节点
+      - aiport01♡台湾节点
+      - aiport01♡新加坡节点
+      - aiport01♡美国节点
+      - aiport01♡日本节点
+      - aiport02♡香港节点(Fallback)
+      - aiport02♡新加坡节点(Fallback)
+      - aiport02♡美国节点(Fallback)
+      - aiport02♡香港节点
+      - aiport02♡台湾节点
+      - aiport02♡新加坡节点
+      - aiport02♡美国节点
+      - aiport02♡日本节点
     use:        
-      - 离港机场名字01_Filter_All
-      - 离港机场名字02_Filter_All
+      - aiport01_Filter_All
+      - aiport02_Filter_All
 
   - name: YouTube
     type: select
-    proxies:        
-      - 离港机场名字01
-      - 离港机场名字02
-      - 离港机场名字01♡香港节点(Fallback)
-      - 离港机场名字01♡美国节点(Fallback)
-      - 离港机场名字01♡香港节点
-      - 离港机场名字01♡台湾节点
-      - 离港机场名字01♡新加坡节点
-      - 离港机场名字01♡美国节点
-      - 离港机场名字01♡日本节点
-      - 离港机场名字02♡香港节点(Fallback)
-      - 离港机场名字02♡美国节点(Fallback)
-      - 离港机场名字02♡香港节点
-      - 离港机场名字02♡台湾节点
-      - 离港机场名字02♡新加坡节点
-      - 离港机场名字02♡美国节点
-      - 离港机场名字02♡日本节点
+    icon: https://raw.githubusercontent.com/airportchat/Logo/main/app_logo/YouTube.png
+    proxies:
+      - aiport01
+      - aiport02
+      - aiport01♡香港节点(Fallback)
+      - aiport01♡新加坡节点(Fallback)
+      - aiport01♡美国节点(Fallback)
+      - aiport01♡香港节点
+      - aiport01♡台湾节点
+      - aiport01♡新加坡节点
+      - aiport01♡美国节点
+      - aiport01♡日本节点
+      - aiport02♡香港节点(Fallback)
+      - aiport02♡新加坡节点(Fallback)
+      - aiport02♡美国节点(Fallback)
+      - aiport02♡香港节点
+      - aiport02♡台湾节点
+      - aiport02♡新加坡节点
+      - aiport02♡美国节点
+      - aiport02♡日本节点
     use:        
-      - 离港机场名字01_Filter_All
-      - 离港机场名字02_Filter_All
+      - aiport01_Filter_All
+      - aiport02_Filter_All
 
 
   - name: Google
     type: select
-    proxies:        
-      - 离港机场名字01
-      - 离港机场名字02
-      - 离港机场名字01♡香港节点(Fallback)
-      - 离港机场名字01♡美国节点(Fallback)
-      - 离港机场名字01♡香港节点
-      - 离港机场名字01♡台湾节点
-      - 离港机场名字01♡新加坡节点
-      - 离港机场名字01♡美国节点
-      - 离港机场名字01♡日本节点
-      - 离港机场名字02♡香港节点(Fallback)
-      - 离港机场名字02♡美国节点(Fallback)
-      - 离港机场名字02♡香港节点
-      - 离港机场名字02♡台湾节点
-      - 离港机场名字02♡新加坡节点
-      - 离港机场名字02♡美国节点
-      - 离港机场名字02♡日本节点
+    icon: https://raw.githubusercontent.com/airportchat/Logo/main/app_logo/Google.png
+    proxies:
+      - aiport01
+      - aiport02
+      - aiport01♡香港节点(Fallback)
+      - aiport01♡新加坡节点(Fallback)
+      - aiport01♡美国节点(Fallback)
+      - aiport01♡香港节点
+      - aiport01♡台湾节点
+      - aiport01♡新加坡节点
+      - aiport01♡美国节点
+      - aiport01♡日本节点
+      - aiport02♡香港节点(Fallback)
+      - aiport02♡新加坡节点(Fallback)
+      - aiport02♡美国节点(Fallback)
+      - aiport02♡香港节点
+      - aiport02♡台湾节点
+      - aiport02♡新加坡节点
+      - aiport02♡美国节点
+      - aiport02♡日本节点
     use:        
-      - 离港机场名字01_Filter_All
-      - 离港机场名字02_Filter_All
-
-  - name: Download
-    type: select
-    proxies:        
-      - DIRECT
-      - 离港机场名字01
-      - 离港机场名字02
-      - 离港机场名字01♡香港节点(Fallback)
-      - 离港机场名字01♡美国节点(Fallback)
-      - 离港机场名字01♡香港节点
-      - 离港机场名字01♡台湾节点
-      - 离港机场名字01♡新加坡节点
-      - 离港机场名字01♡美国节点
-      - 离港机场名字01♡日本节点
-      - 离港机场名字02♡香港节点(Fallback)
-      - 离港机场名字02♡美国节点(Fallback)
-      - 离港机场名字02♡香港节点
-      - 离港机场名字02♡台湾节点
-      - 离港机场名字02♡新加坡节点
-      - 离港机场名字02♡美国节点
-      - 离港机场名字02♡日本节点
-    use:        
-      - 离港机场名字01_Filter_All
-      - 离港机场名字02_Filter_All
+      - aiport01_Filter_All
+      - aiport02_Filter_All
 
   - name: Netflix
     type: select
-    proxies:        
-      - 离港机场名字01
-      - 离港机场名字02
-      - 离港机场名字01♡香港节点(Fallback)
-      - 离港机场名字01♡美国节点(Fallback)
-      - 离港机场名字01♡香港节点
-      - 离港机场名字01♡台湾节点
-      - 离港机场名字01♡新加坡节点
-      - 离港机场名字01♡美国节点
-      - 离港机场名字01♡日本节点
-      - 离港机场名字02♡香港节点(Fallback)
-      - 离港机场名字02♡美国节点(Fallback)
-      - 离港机场名字02♡香港节点
-      - 离港机场名字02♡台湾节点
-      - 离港机场名字02♡新加坡节点
-      - 离港机场名字02♡美国节点
-      - 离港机场名字02♡日本节点
+    icon: https://raw.githubusercontent.com/airportchat/Logo/main/app_logo/Netflix.png
+    proxies:
+      - aiport01
+      - aiport02
+      - aiport01♡香港节点(Fallback)
+      - aiport01♡新加坡节点(Fallback)
+      - aiport01♡美国节点(Fallback)
+      - aiport01♡香港节点
+      - aiport01♡台湾节点
+      - aiport01♡新加坡节点
+      - aiport01♡美国节点
+      - aiport01♡日本节点
+      - aiport02♡香港节点(Fallback)
+      - aiport02♡新加坡节点(Fallback)
+      - aiport02♡美国节点(Fallback)
+      - aiport02♡香港节点
+      - aiport02♡台湾节点
+      - aiport02♡新加坡节点
+      - aiport02♡美国节点
+      - aiport02♡日本节点
     use:        
-      - 离港机场名字01_Filter_All
-      - 离港机场名字02_Filter_All
+      - aiport01_Filter_All
+      - aiport02_Filter_All
 
   - name: Disney
     type: select
-    proxies:        
-      - 离港机场名字01
-      - 离港机场名字02
-      - 离港机场名字01♡香港节点(Fallback)
-      - 离港机场名字01♡美国节点(Fallback)
-      - 离港机场名字01♡香港节点
-      - 离港机场名字01♡台湾节点
-      - 离港机场名字01♡新加坡节点
-      - 离港机场名字01♡美国节点
-      - 离港机场名字01♡日本节点
-      - 离港机场名字02♡香港节点(Fallback)
-      - 离港机场名字02♡美国节点(Fallback)
-      - 离港机场名字02♡香港节点
-      - 离港机场名字02♡台湾节点
-      - 离港机场名字02♡新加坡节点
-      - 离港机场名字02♡美国节点
-      - 离港机场名字02♡日本节点
+    icon: https://raw.githubusercontent.com/airportchat/Logo/main/app_logo/Disney+.png
+    proxies:
+      - aiport01
+      - aiport02
+      - aiport01♡香港节点(Fallback)
+      - aiport01♡新加坡节点(Fallback)
+      - aiport01♡美国节点(Fallback)
+      - aiport01♡香港节点
+      - aiport01♡台湾节点
+      - aiport01♡新加坡节点
+      - aiport01♡美国节点
+      - aiport01♡日本节点
+      - aiport02♡香港节点(Fallback)
+      - aiport02♡新加坡节点(Fallback)
+      - aiport02♡美国节点(Fallback)
+      - aiport02♡香港节点
+      - aiport02♡台湾节点
+      - aiport02♡新加坡节点
+      - aiport02♡美国节点
+      - aiport02♡日本节点
     use:        
-      - 离港机场名字01_Filter_All
-      - 离港机场名字02_Filter_All
+      - aiport01_Filter_All
+      - aiport02_Filter_All
 
   - name: HBO
     type: select
-    proxies:        
-      - 离港机场名字01
-      - 离港机场名字02
-      - 离港机场名字01♡香港节点(Fallback)
-      - 离港机场名字01♡美国节点(Fallback)
-      - 离港机场名字01♡香港节点
-      - 离港机场名字01♡台湾节点
-      - 离港机场名字01♡新加坡节点
-      - 离港机场名字01♡美国节点
-      - 离港机场名字01♡日本节点
-      - 离港机场名字02♡香港节点(Fallback)
-      - 离港机场名字02♡美国节点(Fallback)
-      - 离港机场名字02♡香港节点
-      - 离港机场名字02♡台湾节点
-      - 离港机场名字02♡新加坡节点
-      - 离港机场名字02♡美国节点
-      - 离港机场名字02♡日本节点
+    icon: https://raw.githubusercontent.com/airportchat/Logo/main/app_logo/HBO_Max.png
+    proxies:
+      - aiport01
+      - aiport02
+      - aiport01♡香港节点(Fallback)
+      - aiport01♡新加坡节点(Fallback)
+      - aiport01♡美国节点(Fallback)
+      - aiport01♡香港节点
+      - aiport01♡台湾节点
+      - aiport01♡新加坡节点
+      - aiport01♡美国节点
+      - aiport01♡日本节点
+      - aiport02♡香港节点(Fallback)
+      - aiport02♡新加坡节点(Fallback)
+      - aiport02♡美国节点(Fallback)
+      - aiport02♡香港节点
+      - aiport02♡台湾节点
+      - aiport02♡新加坡节点
+      - aiport02♡美国节点
+      - aiport02♡日本节点
     use:        
-      - 离港机场名字01_Filter_All
-      - 离港机场名字02_Filter_All
+      - aiport01_Filter_All
+      - aiport02_Filter_All
+
+  - name: BiliBili
+    type: select
+    icon: https://raw.githubusercontent.com/airportchat/Logo/main/app_logo/BiliBili.png
+    proxies:
+      - DIRECT
+      - aiport01
+      - aiport02
+      - aiport01♡香港节点(Fallback)
+      - aiport01♡新加坡节点(Fallback)
+      - aiport01♡美国节点(Fallback)
+      - aiport01♡香港节点
+      - aiport01♡台湾节点
+      - aiport01♡新加坡节点
+      - aiport01♡美国节点
+      - aiport01♡日本节点
+      - aiport02♡香港节点(Fallback)
+      - aiport02♡新加坡节点(Fallback)
+      - aiport02♡美国节点(Fallback)
+      - aiport02♡香港节点
+      - aiport02♡台湾节点
+      - aiport02♡新加坡节点
+      - aiport02♡美国节点
+      - aiport02♡日本节点
+    use:        
+      - aiport01_Filter_All
+      - aiport02_Filter_All
+
+  - name: Spotify
+    type: select
+    icon: https://raw.githubusercontent.com/airportchat/Logo/main/app_logo/Spotify.png
+    proxies:
+      - aiport01
+      - aiport02
+      - aiport01♡香港节点(Fallback)
+      - aiport01♡新加坡节点(Fallback)
+      - aiport01♡美国节点(Fallback)
+      - aiport01♡香港节点
+      - aiport01♡台湾节点
+      - aiport01♡新加坡节点
+      - aiport01♡美国节点
+      - aiport01♡日本节点
+      - aiport02♡香港节点(Fallback)
+      - aiport02♡新加坡节点(Fallback)
+      - aiport02♡美国节点(Fallback)
+      - aiport02♡香港节点
+      - aiport02♡台湾节点
+      - aiport02♡新加坡节点
+      - aiport02♡美国节点
+      - aiport02♡日本节点
+    use:        
+      - aiport01_Filter_All
+      - aiport02_Filter_All
+
   - name: OpenAI
     type: select
-    proxies:        
-      - 离港机场名字01
-      - 离港机场名字02
-      - 离港机场名字01♡香港节点(Fallback)
-      - 离港机场名字01♡美国节点(Fallback)
-      - 离港机场名字01♡香港节点
-      - 离港机场名字01♡台湾节点
-      - 离港机场名字01♡新加坡节点
-      - 离港机场名字01♡美国节点
-      - 离港机场名字01♡日本节点
-      - 离港机场名字02♡香港节点(Fallback)
-      - 离港机场名字02♡美国节点(Fallback)
-      - 离港机场名字02♡香港节点
-      - 离港机场名字02♡台湾节点
-      - 离港机场名字02♡新加坡节点
-      - 离港机场名字02♡美国节点
-      - 离港机场名字02♡日本节点
+    icon: https://raw.githubusercontent.com/airportchat/Logo/main/app_logo/OpenAi.png
+    proxies:
+      - aiport01
+      - aiport02
+      - aiport01♡香港节点(Fallback)
+      - aiport01♡新加坡节点(Fallback)
+      - aiport01♡美国节点(Fallback)
+      - aiport01♡香港节点
+      - aiport01♡台湾节点
+      - aiport01♡新加坡节点
+      - aiport01♡美国节点
+      - aiport01♡日本节点
+      - aiport02♡香港节点(Fallback)
+      - aiport02♡新加坡节点(Fallback)
+      - aiport02♡美国节点(Fallback)
+      - aiport02♡香港节点
+      - aiport02♡台湾节点
+      - aiport02♡新加坡节点
+      - aiport02♡美国节点
+      - aiport02♡日本节点
     use:        
-      - 离港机场名字01_Filter_All
-      - 离港机场名字02_Filter_All
+      - aiport01_Filter_All
+      - aiport02_Filter_All
+
+  - name: Steam
+    type: select
+    icon: https://raw.githubusercontent.com/airportchat/Logo/main/app_logo/Steam.png
+    proxies:
+      - DIRECT
+      - aiport01
+      - aiport02
+      - aiport01♡香港节点(Fallback)
+      - aiport01♡新加坡节点(Fallback)
+      - aiport01♡美国节点(Fallback)
+      - aiport01♡香港节点
+      - aiport01♡台湾节点
+      - aiport01♡新加坡节点
+      - aiport01♡美国节点
+      - aiport01♡日本节点
+      - aiport02♡香港节点(Fallback)
+      - aiport02♡新加坡节点(Fallback)
+      - aiport02♡美国节点(Fallback)
+      - aiport02♡香港节点
+      - aiport02♡台湾节点
+      - aiport02♡新加坡节点
+      - aiport02♡美国节点
+      - aiport02♡日本节点
+    use:        
+      - aiport01_Filter_All
+      - aiport02_Filter_All
 
   - name: Emby
     type: select
-    proxies:        
+    icon: https://raw.githubusercontent.com/airportchat/Logo/main/app_logo/Emby.png
+    proxies:
       - DIRECT
-      - 离港机场名字01
-      - 离港机场名字02
-      - 离港机场名字01♡香港节点(Fallback)
-      - 离港机场名字01♡美国节点(Fallback)
-      - 离港机场名字01♡香港节点
-      - 离港机场名字01♡台湾节点
-      - 离港机场名字01♡新加坡节点
-      - 离港机场名字01♡美国节点
-      - 离港机场名字01♡日本节点
-      - 离港机场名字02♡香港节点(Fallback)
-      - 离港机场名字02♡美国节点(Fallback)
-      - 离港机场名字02♡香港节点
-      - 离港机场名字02♡台湾节点
-      - 离港机场名字02♡新加坡节点
-      - 离港机场名字02♡美国节点
-      - 离港机场名字02♡日本节点
+      - aiport01
+      - aiport02
+      - aiport01♡香港节点(Fallback)
+      - aiport01♡新加坡节点(Fallback)
+      - aiport01♡美国节点(Fallback)
+      - aiport01♡香港节点
+      - aiport01♡台湾节点
+      - aiport01♡新加坡节点
+      - aiport01♡美国节点
+      - aiport01♡日本节点
+      - aiport02♡香港节点(Fallback)
+      - aiport02♡新加坡节点(Fallback)
+      - aiport02♡美国节点(Fallback)
+      - aiport02♡香港节点
+      - aiport02♡台湾节点
+      - aiport02♡新加坡节点
+      - aiport02♡美国节点
+      - aiport02♡日本节点
     use:        
-      - 离港机场名字01_Filter_All
-      - 离港机场名字02_Filter_All
+      - aiport01_Filter_All
+      - aiport02_Filter_All
+
+  - name: TikTok
+    type: select
+    icon: https://raw.githubusercontent.com/airportchat/Logo/main/app_logo/TikTok.png
+    proxies:
+      - aiport01
+      - aiport02
+      - aiport01♡香港节点(Fallback)
+      - aiport01♡新加坡节点(Fallback)
+      - aiport01♡美国节点(Fallback)
+      - aiport01♡香港节点
+      - aiport01♡台湾节点
+      - aiport01♡新加坡节点
+      - aiport01♡美国节点
+      - aiport01♡日本节点
+      - aiport02♡香港节点(Fallback)
+      - aiport02♡新加坡节点(Fallback)
+      - aiport02♡美国节点(Fallback)
+      - aiport02♡香港节点
+      - aiport02♡台湾节点
+      - aiport02♡新加坡节点
+      - aiport02♡美国节点
+      - aiport02♡日本节点
+    use:        
+      - aiport01_Filter_All
+      - aiport02_Filter_All
+
+  - name: Twitter
+    type: select
+    icon: https://raw.githubusercontent.com/airportchat/Logo/main/app_logo/Twitter.png
+    proxies:
+      - aiport01
+      - aiport02
+      - aiport01♡香港节点(Fallback)
+      - aiport01♡新加坡节点(Fallback)
+      - aiport01♡美国节点(Fallback)
+      - aiport01♡香港节点
+      - aiport01♡台湾节点
+      - aiport01♡新加坡节点
+      - aiport01♡美国节点
+      - aiport01♡日本节点
+      - aiport02♡香港节点(Fallback)
+      - aiport02♡新加坡节点(Fallback)
+      - aiport02♡美国节点(Fallback)
+      - aiport02♡香港节点
+      - aiport02♡台湾节点
+      - aiport02♡新加坡节点
+      - aiport02♡美国节点
+      - aiport02♡日本节点
+    use:        
+      - aiport01_Filter_All
+      - aiport02_Filter_All
+
+  - name: Weibo
+    type: select
+    icon: https://raw.githubusercontent.com/airportchat/Logo/main/app_logo/Weibo.png
+    proxies:
+      - DIRECT
+      - aiport01
+      - aiport02
+      - aiport01♡香港节点(Fallback)
+      - aiport01♡新加坡节点(Fallback)
+      - aiport01♡美国节点(Fallback)
+      - aiport01♡香港节点
+      - aiport01♡台湾节点
+      - aiport01♡新加坡节点
+      - aiport01♡美国节点
+      - aiport01♡日本节点
+      - aiport02♡香港节点(Fallback)
+      - aiport02♡新加坡节点(Fallback)
+      - aiport02♡美国节点(Fallback)
+      - aiport02♡香港节点
+      - aiport02♡台湾节点
+      - aiport02♡新加坡节点
+      - aiport02♡美国节点
+      - aiport02♡日本节点
+    use:        
+      - aiport01_Filter_All
+      - aiport02_Filter_All
 
   - name: Apple
     type: select
-    proxies:        
+    icon: https://raw.githubusercontent.com/airportchat/Logo/main/app_logo/Apple.png
+    proxies:
       - DIRECT
-      - 离港机场名字01
-      - 离港机场名字02
-      - 离港机场名字01♡香港节点(Fallback)
-      - 离港机场名字01♡美国节点(Fallback)
-      - 离港机场名字01♡香港节点
-      - 离港机场名字01♡台湾节点
-      - 离港机场名字01♡新加坡节点
-      - 离港机场名字01♡美国节点
-      - 离港机场名字01♡日本节点
-      - 离港机场名字02♡香港节点(Fallback)
-      - 离港机场名字02♡美国节点(Fallback)
-      - 离港机场名字02♡香港节点
-      - 离港机场名字02♡台湾节点
-      - 离港机场名字02♡新加坡节点
-      - 离港机场名字02♡美国节点
-      - 离港机场名字02♡日本节点
+      - aiport01
+      - aiport02
+      - aiport01♡香港节点(Fallback)
+      - aiport01♡新加坡节点(Fallback)
+      - aiport01♡美国节点(Fallback)
+      - aiport01♡香港节点
+      - aiport01♡台湾节点
+      - aiport01♡新加坡节点
+      - aiport01♡美国节点
+      - aiport01♡日本节点
+      - aiport02♡香港节点(Fallback)
+      - aiport02♡新加坡节点(Fallback)
+      - aiport02♡美国节点(Fallback)
+      - aiport02♡香港节点
+      - aiport02♡台湾节点
+      - aiport02♡新加坡节点
+      - aiport02♡美国节点
+      - aiport02♡日本节点
     use:        
-      - 离港机场名字01_Filter_All
-      - 离港机场名字02_Filter_All
+      - aiport01_Filter_All
+      - aiport02_Filter_All
 
   - name: Microsoft
     type: select
-    proxies:        
+    icon: https://raw.githubusercontent.com/airportchat/Logo/main/app_logo/Microsoft.png
+    proxies:
       - DIRECT
-      - 离港机场名字01
-      - 离港机场名字02
-      - 离港机场名字01♡香港节点(Fallback)
-      - 离港机场名字01♡美国节点(Fallback)
-      - 离港机场名字01♡香港节点
-      - 离港机场名字01♡台湾节点
-      - 离港机场名字01♡新加坡节点
-      - 离港机场名字01♡美国节点
-      - 离港机场名字01♡日本节点
-      - 离港机场名字02♡香港节点(Fallback)
-      - 离港机场名字02♡美国节点(Fallback)
-      - 离港机场名字02♡香港节点
-      - 离港机场名字02♡台湾节点
-      - 离港机场名字02♡新加坡节点
-      - 离港机场名字02♡美国节点
-      - 离港机场名字02♡日本节点
+      - aiport01
+      - aiport02
+      - aiport01♡香港节点(Fallback)
+      - aiport01♡新加坡节点(Fallback)
+      - aiport01♡美国节点(Fallback)
+      - aiport01♡香港节点
+      - aiport01♡台湾节点
+      - aiport01♡新加坡节点
+      - aiport01♡美国节点
+      - aiport01♡日本节点
+      - aiport02♡香港节点(Fallback)
+      - aiport02♡新加坡节点(Fallback)
+      - aiport02♡美国节点(Fallback)
+      - aiport02♡香港节点
+      - aiport02♡台湾节点
+      - aiport02♡新加坡节点
+      - aiport02♡美国节点
+      - aiport02♡日本节点
     use:        
-      - 离港机场名字01_Filter_All
-      - 离港机场名字02_Filter_All
+      - aiport01_Filter_All
+      - aiport02_Filter_All
+
+  - name: Download
+    type: select
+    icon: https://raw.githubusercontent.com/airportchat/Logo/main/app_logo/Download.png
+    proxies:
+      - DIRECT
+      - aiport01
+      - aiport02
+      - aiport01♡香港节点(Fallback)
+      - aiport01♡新加坡节点(Fallback)
+      - aiport01♡美国节点(Fallback)
+      - aiport01♡香港节点
+      - aiport01♡台湾节点
+      - aiport01♡新加坡节点
+      - aiport01♡美国节点
+      - aiport01♡日本节点
+      - aiport02♡香港节点(Fallback)
+      - aiport02♡新加坡节点(Fallback)
+      - aiport02♡美国节点(Fallback)
+      - aiport02♡香港节点
+      - aiport02♡台湾节点
+      - aiport02♡新加坡节点
+      - aiport02♡美国节点
+      - aiport02♡日本节点
+    use:        
+      - aiport01_Filter_All
+      - aiport02_Filter_All
 
 
-#离港机场名字01部分
-  - name: 离港机场名字01♡香港节点(Fallback)
+#aiport01部分
+  - name: aiport01♡香港节点(Fallback)
     type: fallback
+    icon: https://raw.githubusercontent.com/airportchat/Logo/main/app_logo/HK.png
     url: https://www.gstatic.com/generate_204
     interval: 60
     lazy: true
     proxies:
     use:
-      - 离港机场名字01_Filter_HK
+      - aiport01_Filter_HK
 
-  - name: 离港机场名字01♡美国节点(Fallback)
+  - name: aiport01♡新加坡节点(Fallback)
     type: fallback
+    icon: https://raw.githubusercontent.com/airportchat/Logo/main/app_logo/SG.png
     url: https://www.gstatic.com/generate_204
     interval: 60
     lazy: true
     proxies:
     use:
-      - 离港机场名字01_Filter_US
+      - aiport01_Filter_SG
 
-  - name: 离港机场名字01♡香港节点
-    type: select
-    proxies:
-    use:
-      - 离港机场名字01_Filter_HK
-
-  - name: 离港机场名字01♡台湾节点
-    type: select
-    proxies:
-    use:
-      - 离港机场名字01_Filter_TW
-
-  - name: 离港机场名字01♡新加坡节点
-    type: select
-    proxies:
-    use:
-      - 离港机场名字01_Filter_SG
-
-  - name: 离港机场名字01♡美国节点
-    type: select
-    proxies:
-    use:
-      - 离港机场名字01_Filter_US
-
-  - name: 离港机场名字01♡日本节点
-    type: select
-    proxies:
-    use:
-      - 离港机场名字01_Filter_JP
-
-#离港机场名字02部分
-  - name: 离港机场名字02♡香港节点(Fallback) #超时自动选择下一个
+  - name: aiport01♡美国节点(Fallback)
     type: fallback
+    icon: https://raw.githubusercontent.com/airportchat/Logo/main/app_logo/US.png
     url: https://www.gstatic.com/generate_204
     interval: 60
     lazy: true
     proxies:
     use:
-      - 离港机场名字02_Filter_HK
+      - aiport01_Filter_US
 
-  - name: 离港机场名字02♡美国节点(Fallback)
+  - name: aiport01♡香港节点
+    type: select
+    icon: https://raw.githubusercontent.com/airportchat/Logo/main/app_logo/HK.png
+    proxies:
+    use:
+      - aiport01_Filter_HK
+
+  - name: aiport01♡台湾节点
+    type: select
+    icon: https://raw.githubusercontent.com/airportchat/Logo/main/app_logo/TW.png
+    proxies:
+    use:
+      - aiport01_Filter_TW
+
+  - name: aiport01♡新加坡节点
+    type: select
+    icon: https://raw.githubusercontent.com/airportchat/Logo/main/app_logo/SG.png
+    proxies:
+    use:
+      - aiport01_Filter_SG
+
+  - name: aiport01♡美国节点
+    type: select
+    icon: https://raw.githubusercontent.com/airportchat/Logo/main/app_logo/US.png
+    proxies:
+    use:
+      - aiport01_Filter_US
+
+  - name: aiport01♡日本节点
+    type: select
+    icon: https://raw.githubusercontent.com/airportchat/Logo/main/app_logo/JP.png
+    proxies:
+    use:
+      - aiport01_Filter_JP
+
+#aiport02部分
+  - name: aiport02♡香港节点(Fallback)
     type: fallback
+    icon: https://raw.githubusercontent.com/airportchat/Logo/main/app_logo/HK.png
     url: https://www.gstatic.com/generate_204
     interval: 60
     lazy: true
     proxies:
     use:
-      - 离港机场名字02_Filter_US
+      - aiport02_Filter_HK
 
-  - name: 离港机场名字02♡香港节点
-    type: select
+  - name: aiport02♡新加坡节点(Fallback)
+    type: fallback
+    icon: https://raw.githubusercontent.com/airportchat/Logo/main/app_logo/SG.png
+    url: https://www.gstatic.com/generate_204
+    interval: 60
+    lazy: true
     proxies:
     use:
-      - 离港机场名字02_Filter_HK
+      - aiport02_Filter_SG
 
-  - name: 离港机场名字02♡台湾节点
-    type: select
+  - name: aiport02♡美国节点(Fallback)
+    type: fallback
+    icon: https://raw.githubusercontent.com/airportchat/Logo/main/app_logo/US.png
+    url: https://www.gstatic.com/generate_204
+    interval: 60
+    lazy: true
     proxies:
     use:
-      - 离港机场名字02_Filter_TW
+      - aiport02_Filter_US
 
-  - name: 离港机场名字02♡新加坡节点
+  - name: aiport02♡香港节点
     type: select
+    icon: https://raw.githubusercontent.com/airportchat/Logo/main/app_logo/HK.png
     proxies:
     use:
-      - 离港机场名字02_Filter_SG
+      - aiport02_Filter_HK
 
-  - name: 离港机场名字02♡美国节点
+  - name: aiport02♡台湾节点
     type: select
+    icon: https://raw.githubusercontent.com/airportchat/Logo/main/app_logo/TW.png
     proxies:
     use:
-      - 离港机场名字02_Filter_US
+      - aiport02_Filter_TW
 
-  - name: 离港机场名字02♡日本节点
+  - name: aiport02♡新加坡节点
     type: select
+    icon: https://raw.githubusercontent.com/airportchat/Logo/main/app_logo/SG.png
     proxies:
     use:
-      - 离港机场名字02_Filter_JP
+      - aiport02_Filter_SG
+
+  - name: aiport02♡美国节点
+    type: select
+    icon: https://raw.githubusercontent.com/airportchat/Logo/main/app_logo/US.png
+    proxies:
+    use:
+      - aiport02_Filter_US
+
+  - name: aiport02♡日本节点
+    type: select
+    icon: https://raw.githubusercontent.com/airportchat/Logo/main/app_logo/JP.png
+    proxies:
+    use:
+      - aiport02_Filter_JP
 
 
 #远程规则集合
@@ -621,6 +859,14 @@ rule-providers:
     path: ./RuleSet/Google.yaml
     interval: 86400
 
+  #Steam
+  Steam_rule:
+    type: http
+    behavior: classical
+    url: "https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Steam/Steam.yaml"
+    path: ./RuleSet/Steam.yaml
+    interval: 86400
+
   #Apple
   Apple_Classical_rule:
     type: http
@@ -645,6 +891,46 @@ rule-providers:
     path: ./RuleSet/OpenAI.yaml
     interval: 86400
 
+  #Spotify
+  Spotify_rule:
+    type: http
+    behavior: classical
+    url: "https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Spotify/Spotify.yaml"
+    path: ./RuleSet/Spotify.yaml
+    interval: 86400
+
+  #TikTok
+  TikTok_rule:
+    type: http
+    behavior: classical
+    url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/TikTok/TikTok.yaml"
+    path: ./RuleSet/TikTok.yaml
+    interval: 86400
+
+  #BiliBili
+  BiliBili_rule:
+    type: http
+    behavior: classical
+    url: "https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/BiliBili/BiliBili.yaml"
+    path: ./RuleSet/BiliBili.yaml
+    interval: 86400
+
+  #Twitter
+  Twitter_rule:
+    type: http
+    behavior: classical
+    url: "https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Twitter/Twitter.yaml"
+    path: ./RuleSet/Twitter.yaml
+    interval: 86400
+
+  #Weibo
+  Weibo_rule:
+    type: http
+    behavior: classical
+    url: "https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Weibo/Weibo.yaml"
+    path: ./RuleSet/Weibo.yaml
+    interval: 86400
+
 
 rules:
   # Telegram
@@ -661,13 +947,26 @@ rules:
  
   # 媒体
   - RULE-SET,YouTube_rule,YouTube
-  - RULE-SET,Emby_rule,Emby 
+  - RULE-SET,Emby_rule,Emby
   - RULE-SET,Netflix_rule,Netflix
   - RULE-SET,Disney_rule,Disney
   - RULE-SET,HBO_rule,HBO
+  - RULE-SET,BiliBili_rule,BiliBili
+
+  # Steam
+  - RULE-SET,Steam_rule,Steam
 
   # Google
   - RULE-SET,Google_rule,Google
+
+  # 音乐
+  - RULE-SET,Spotify_rule,Spotify
+
+  # 社交APP
+  - RULE-SET,TikTok_rule,TikTok
+  - RULE-SET,Twitter_rule,Twitter
+  - RULE-SET,Weibo_rule,Weibo
+
 
   #本地局域网
   - RULE-SET,Lan_rule,DIRECT
