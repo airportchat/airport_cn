@@ -1,11 +1,11 @@
 #####使用前必读(不必删除必读内容)######
-#您好，这里离港专用Stash配置模板(单机场)，欢迎加入频道&群组和大佬们一起讨论：
+#您好，这里离港懒人Stash配置模板(单机场)，欢迎加入频道&群组和大佬们一起讨论：
 #优质离港机场频道：https://t.me/airport_cn
 #离港vip候机室：https://t.me/airport_chat
 #规则来自blackmatrix7大佬：https://github.com/blackmatrix7/ios_rule_script/tree/master/rule
 
 #使用方法：
-#第一步：Ctrl+A全选将此界面所有内容复制到本地用文本编辑器(记事本/Notepad++等)打开，一般是Ctrl+H组合键调出替换窗口，将“aiport_cn_01”全部替换成你的机场名字即可！
+#第一步：Ctrl+A全选将此界面所有内容复制到本地用文本编辑器(记事本/Notepad++等)打开，一般是Ctrl+H组合键调出替换窗口，将“aiport01”全部替换成你的机场名字即可！
 #第二步:将63、69行中url换成你的机场stash订阅后导入即可！(特别注意：url的引号要保留)
 
 port: 7890
@@ -64,11 +64,11 @@ subscribe-url: "你想显示机场流量套餐剩余/到期信息的订阅"
 
 #远程订阅
 proxy-providers:
-  aiport_cn_01_Subscription: &aiport_cn_01 #建立锚点
+  aiport01_Subscription: &aiport01 #建立锚点
     type: http
     url: "你的第一个机场Stash订阅"
     interval: 86400
-    path: ./providers/proxy/aiport_cn_01.yaml
+    path: ./providers/proxy/aiport01.yaml
     health-check:
       enable: true
       interval: 600
@@ -82,28 +82,28 @@ proxy-providers:
 #   ^(?!.*(A|B))     节点名既不含有 A 也不含有 B
 
 #订阅正则提取分组
-#aiport_cn_01部分
-  aiport_cn_01_Filter_All:
-    <<: *aiport_cn_01
+#aiport01部分
+  aiport01_Filter_All:
+    <<: *aiport01
 
-  aiport_cn_01_Filter_HK:
-    <<: *aiport_cn_01
+  aiport01_Filter_HK:
+    <<: *aiport01
     filter: (?i)香港|🇭🇰|HK|Hong
 
-  aiport_cn_01_Filter_TW:
-    <<: *aiport_cn_01
+  aiport01_Filter_TW:
+    <<: *aiport01
     filter: (?i)台(湾|灣)|🇹🇼|TW|Taiwan
 
-  aiport_cn_01_Filter_SG:
-    <<: *aiport_cn_01
+  aiport01_Filter_SG:
+    <<: *aiport01
     filter: (?i)狮|獅|🇸🇬|加坡|SG|Singapore
 
-  aiport_cn_01_Filter_US:
-    <<: *aiport_cn_01
+  aiport01_Filter_US:
+    <<: *aiport01
     filter: (?i)美(国|國)|🇺🇸|US|States|American
 
-  aiport_cn_01_Filter_JP:
-    <<: *aiport_cn_01
+  aiport01_Filter_JP:
+    <<: *aiport01
     filter: (?i)日本|🇯🇵|(东|東)京|JP|Japan
 
 
@@ -115,316 +115,316 @@ proxy-groups:
     icon: https://raw.githubusercontent.com/airportchat/Logo/main/airport_logo/%E7%A6%BB%E6%B8%AF.png
     proxies:
       - DIRECT
-      - aiport_cn_01
-      - aiport_cn_01♡香港节点(Fallback)
-      - aiport_cn_01♡新加坡节点(Fallback)
-      - aiport_cn_01♡美国节点(Fallback)
-      - aiport_cn_01♡香港节点
-      - aiport_cn_01♡台湾节点
-      - aiport_cn_01♡新加坡节点
-      - aiport_cn_01♡美国节点
-      - aiport_cn_01♡日本节点
+      - aiport01
+      - aiport01♡香港节点(Fallback)
+      - aiport01♡新加坡节点(Fallback)
+      - aiport01♡美国节点(Fallback)
+      - aiport01♡香港节点
+      - aiport01♡台湾节点
+      - aiport01♡新加坡节点
+      - aiport01♡美国节点
+      - aiport01♡日本节点
     use:        
-      - aiport_cn_01_Filter_All
+      - aiport01_Filter_All
 
-  - name: aiport_cn_01
+  - name: aiport01
     type: select
     icon: https://raw.githubusercontent.com/airportchat/Logo/main/airport_logo/Nexitally.png
     proxies:
       - DIRECT
-      - aiport_cn_01♡香港节点(Fallback)
-      - aiport_cn_01♡新加坡节点(Fallback)
-      - aiport_cn_01♡美国节点(Fallback)
-      - aiport_cn_01♡香港节点
-      - aiport_cn_01♡台湾节点
-      - aiport_cn_01♡新加坡节点
-      - aiport_cn_01♡美国节点
-      - aiport_cn_01♡日本节点
+      - aiport01♡香港节点(Fallback)
+      - aiport01♡新加坡节点(Fallback)
+      - aiport01♡美国节点(Fallback)
+      - aiport01♡香港节点
+      - aiport01♡台湾节点
+      - aiport01♡新加坡节点
+      - aiport01♡美国节点
+      - aiport01♡日本节点
     use:        
-      - aiport_cn_01_Filter_All
+      - aiport01_Filter_All
 
   - name: Telegram
     type: select
     icon: https://raw.githubusercontent.com/airportchat/Logo/main/app_logo/Telegram.png
     proxies:
-      - aiport_cn_01
-      - aiport_cn_01♡香港节点(Fallback)
-      - aiport_cn_01♡新加坡节点(Fallback)
-      - aiport_cn_01♡美国节点(Fallback)
-      - aiport_cn_01♡香港节点
-      - aiport_cn_01♡台湾节点
-      - aiport_cn_01♡新加坡节点
-      - aiport_cn_01♡美国节点
-      - aiport_cn_01♡日本节点
+      - aiport01
+      - aiport01♡香港节点(Fallback)
+      - aiport01♡新加坡节点(Fallback)
+      - aiport01♡美国节点(Fallback)
+      - aiport01♡香港节点
+      - aiport01♡台湾节点
+      - aiport01♡新加坡节点
+      - aiport01♡美国节点
+      - aiport01♡日本节点
     use:        
-      - aiport_cn_01_Filter_All
+      - aiport01_Filter_All
 
   - name: YouTube
     type: select
     icon: https://raw.githubusercontent.com/airportchat/Logo/main/app_logo/YouTube.png
     proxies:
-      - aiport_cn_01
-      - aiport_cn_01♡香港节点(Fallback)
-      - aiport_cn_01♡新加坡节点(Fallback)
-      - aiport_cn_01♡美国节点(Fallback)
-      - aiport_cn_01♡香港节点
-      - aiport_cn_01♡台湾节点
-      - aiport_cn_01♡新加坡节点
-      - aiport_cn_01♡美国节点
-      - aiport_cn_01♡日本节点
+      - aiport01
+      - aiport01♡香港节点(Fallback)
+      - aiport01♡新加坡节点(Fallback)
+      - aiport01♡美国节点(Fallback)
+      - aiport01♡香港节点
+      - aiport01♡台湾节点
+      - aiport01♡新加坡节点
+      - aiport01♡美国节点
+      - aiport01♡日本节点
     use:        
-      - aiport_cn_01_Filter_All
+      - aiport01_Filter_All
 
 
   - name: Google
     type: select
     icon: https://raw.githubusercontent.com/airportchat/Logo/main/app_logo/Google.png
     proxies:
-      - aiport_cn_01
-      - aiport_cn_01♡香港节点(Fallback)
-      - aiport_cn_01♡新加坡节点(Fallback)
-      - aiport_cn_01♡美国节点(Fallback)
-      - aiport_cn_01♡香港节点
-      - aiport_cn_01♡台湾节点
-      - aiport_cn_01♡新加坡节点
-      - aiport_cn_01♡美国节点
-      - aiport_cn_01♡日本节点
+      - aiport01
+      - aiport01♡香港节点(Fallback)
+      - aiport01♡新加坡节点(Fallback)
+      - aiport01♡美国节点(Fallback)
+      - aiport01♡香港节点
+      - aiport01♡台湾节点
+      - aiport01♡新加坡节点
+      - aiport01♡美国节点
+      - aiport01♡日本节点
     use:        
-      - aiport_cn_01_Filter_All
+      - aiport01_Filter_All
 
   - name: Netflix
     type: select
     icon: https://raw.githubusercontent.com/airportchat/Logo/main/app_logo/Netflix.png
     proxies:
-      - aiport_cn_01
-      - aiport_cn_01♡香港节点(Fallback)
-      - aiport_cn_01♡新加坡节点(Fallback)
-      - aiport_cn_01♡美国节点(Fallback)
-      - aiport_cn_01♡香港节点
-      - aiport_cn_01♡台湾节点
-      - aiport_cn_01♡新加坡节点
-      - aiport_cn_01♡美国节点
-      - aiport_cn_01♡日本节点
+      - aiport01
+      - aiport01♡香港节点(Fallback)
+      - aiport01♡新加坡节点(Fallback)
+      - aiport01♡美国节点(Fallback)
+      - aiport01♡香港节点
+      - aiport01♡台湾节点
+      - aiport01♡新加坡节点
+      - aiport01♡美国节点
+      - aiport01♡日本节点
     use:        
-      - aiport_cn_01_Filter_All
+      - aiport01_Filter_All
 
   - name: Disney
     type: select
     icon: https://raw.githubusercontent.com/airportchat/Logo/main/app_logo/Disney+.png
     proxies:
-      - aiport_cn_01
-      - aiport_cn_01♡香港节点(Fallback)
-      - aiport_cn_01♡新加坡节点(Fallback)
-      - aiport_cn_01♡美国节点(Fallback)
-      - aiport_cn_01♡香港节点
-      - aiport_cn_01♡台湾节点
-      - aiport_cn_01♡新加坡节点
-      - aiport_cn_01♡美国节点
-      - aiport_cn_01♡日本节点
+      - aiport01
+      - aiport01♡香港节点(Fallback)
+      - aiport01♡新加坡节点(Fallback)
+      - aiport01♡美国节点(Fallback)
+      - aiport01♡香港节点
+      - aiport01♡台湾节点
+      - aiport01♡新加坡节点
+      - aiport01♡美国节点
+      - aiport01♡日本节点
     use:        
-      - aiport_cn_01_Filter_All
+      - aiport01_Filter_All
 
   - name: HBO
     type: select
     icon: https://raw.githubusercontent.com/airportchat/Logo/main/app_logo/HBO_Max.png
     proxies:
-      - aiport_cn_01
-      - aiport_cn_01♡香港节点(Fallback)
-      - aiport_cn_01♡新加坡节点(Fallback)
-      - aiport_cn_01♡美国节点(Fallback)
-      - aiport_cn_01♡香港节点
-      - aiport_cn_01♡台湾节点
-      - aiport_cn_01♡新加坡节点
-      - aiport_cn_01♡美国节点
-      - aiport_cn_01♡日本节点
+      - aiport01
+      - aiport01♡香港节点(Fallback)
+      - aiport01♡新加坡节点(Fallback)
+      - aiport01♡美国节点(Fallback)
+      - aiport01♡香港节点
+      - aiport01♡台湾节点
+      - aiport01♡新加坡节点
+      - aiport01♡美国节点
+      - aiport01♡日本节点
     use:        
-      - aiport_cn_01_Filter_All
+      - aiport01_Filter_All
 
   - name: BiliBili
     type: select
     icon: https://raw.githubusercontent.com/airportchat/Logo/main/app_logo/BiliBili.png
     proxies:
       - DIRECT
-      - aiport_cn_01
-      - aiport_cn_01♡香港节点(Fallback)
-      - aiport_cn_01♡新加坡节点(Fallback)
-      - aiport_cn_01♡美国节点(Fallback)
-      - aiport_cn_01♡香港节点
-      - aiport_cn_01♡台湾节点
-      - aiport_cn_01♡新加坡节点
-      - aiport_cn_01♡美国节点
-      - aiport_cn_01♡日本节点
+      - aiport01
+      - aiport01♡香港节点(Fallback)
+      - aiport01♡新加坡节点(Fallback)
+      - aiport01♡美国节点(Fallback)
+      - aiport01♡香港节点
+      - aiport01♡台湾节点
+      - aiport01♡新加坡节点
+      - aiport01♡美国节点
+      - aiport01♡日本节点
     use:        
-      - aiport_cn_01_Filter_All
+      - aiport01_Filter_All
 
   - name: Spotify
     type: select
     icon: https://raw.githubusercontent.com/airportchat/Logo/main/app_logo/Spotify.png
     proxies:
-      - aiport_cn_01
-      - aiport_cn_01♡香港节点(Fallback)
-      - aiport_cn_01♡新加坡节点(Fallback)
-      - aiport_cn_01♡美国节点(Fallback)
-      - aiport_cn_01♡香港节点
-      - aiport_cn_01♡台湾节点
-      - aiport_cn_01♡新加坡节点
-      - aiport_cn_01♡美国节点
-      - aiport_cn_01♡日本节点
+      - aiport01
+      - aiport01♡香港节点(Fallback)
+      - aiport01♡新加坡节点(Fallback)
+      - aiport01♡美国节点(Fallback)
+      - aiport01♡香港节点
+      - aiport01♡台湾节点
+      - aiport01♡新加坡节点
+      - aiport01♡美国节点
+      - aiport01♡日本节点
     use:        
-      - aiport_cn_01_Filter_All
+      - aiport01_Filter_All
 
   - name: OpenAI
     type: select
     icon: https://raw.githubusercontent.com/airportchat/Logo/main/app_logo/OpenAi.png
     proxies:
-      - aiport_cn_01
-      - aiport_cn_01♡香港节点(Fallback)
-      - aiport_cn_01♡新加坡节点(Fallback)
-      - aiport_cn_01♡美国节点(Fallback)
-      - aiport_cn_01♡香港节点
-      - aiport_cn_01♡台湾节点
-      - aiport_cn_01♡新加坡节点
-      - aiport_cn_01♡美国节点
-      - aiport_cn_01♡日本节点
+      - aiport01
+      - aiport01♡香港节点(Fallback)
+      - aiport01♡新加坡节点(Fallback)
+      - aiport01♡美国节点(Fallback)
+      - aiport01♡香港节点
+      - aiport01♡台湾节点
+      - aiport01♡新加坡节点
+      - aiport01♡美国节点
+      - aiport01♡日本节点
     use:        
-      - aiport_cn_01_Filter_All
+      - aiport01_Filter_All
 
   - name: Steam
     type: select
     icon: https://raw.githubusercontent.com/airportchat/Logo/main/app_logo/Steam.png
     proxies:
       - DIRECT
-      - aiport_cn_01
-      - aiport_cn_01♡香港节点(Fallback)
-      - aiport_cn_01♡新加坡节点(Fallback)
-      - aiport_cn_01♡美国节点(Fallback)
-      - aiport_cn_01♡香港节点
-      - aiport_cn_01♡台湾节点
-      - aiport_cn_01♡新加坡节点
-      - aiport_cn_01♡美国节点
-      - aiport_cn_01♡日本节点
+      - aiport01
+      - aiport01♡香港节点(Fallback)
+      - aiport01♡新加坡节点(Fallback)
+      - aiport01♡美国节点(Fallback)
+      - aiport01♡香港节点
+      - aiport01♡台湾节点
+      - aiport01♡新加坡节点
+      - aiport01♡美国节点
+      - aiport01♡日本节点
     use:        
-      - aiport_cn_01_Filter_All
+      - aiport01_Filter_All
 
   - name: Emby
     type: select
     icon: https://raw.githubusercontent.com/airportchat/Logo/main/app_logo/Emby.png
     proxies:
       - DIRECT
-      - aiport_cn_01
-      - aiport_cn_01♡香港节点(Fallback)
-      - aiport_cn_01♡新加坡节点(Fallback)
-      - aiport_cn_01♡美国节点(Fallback)
-      - aiport_cn_01♡香港节点
-      - aiport_cn_01♡台湾节点
-      - aiport_cn_01♡新加坡节点
-      - aiport_cn_01♡美国节点
-      - aiport_cn_01♡日本节点
+      - aiport01
+      - aiport01♡香港节点(Fallback)
+      - aiport01♡新加坡节点(Fallback)
+      - aiport01♡美国节点(Fallback)
+      - aiport01♡香港节点
+      - aiport01♡台湾节点
+      - aiport01♡新加坡节点
+      - aiport01♡美国节点
+      - aiport01♡日本节点
     use:        
-      - aiport_cn_01_Filter_All
+      - aiport01_Filter_All
 
   - name: TikTok
     type: select
     icon: https://raw.githubusercontent.com/airportchat/Logo/main/app_logo/TikTok.png
     proxies:
-      - aiport_cn_01
-      - aiport_cn_01♡香港节点(Fallback)
-      - aiport_cn_01♡新加坡节点(Fallback)
-      - aiport_cn_01♡美国节点(Fallback)
-      - aiport_cn_01♡香港节点
-      - aiport_cn_01♡台湾节点
-      - aiport_cn_01♡新加坡节点
-      - aiport_cn_01♡美国节点
-      - aiport_cn_01♡日本节点
+      - aiport01
+      - aiport01♡香港节点(Fallback)
+      - aiport01♡新加坡节点(Fallback)
+      - aiport01♡美国节点(Fallback)
+      - aiport01♡香港节点
+      - aiport01♡台湾节点
+      - aiport01♡新加坡节点
+      - aiport01♡美国节点
+      - aiport01♡日本节点
     use:        
-      - aiport_cn_01_Filter_All
+      - aiport01_Filter_All
 
   - name: Twitter
     type: select
     icon: https://raw.githubusercontent.com/airportchat/Logo/main/app_logo/Twitter.png
     proxies:
-      - aiport_cn_01
-      - aiport_cn_01♡香港节点(Fallback)
-      - aiport_cn_01♡新加坡节点(Fallback)
-      - aiport_cn_01♡美国节点(Fallback)
-      - aiport_cn_01♡香港节点
-      - aiport_cn_01♡台湾节点
-      - aiport_cn_01♡新加坡节点
-      - aiport_cn_01♡美国节点
-      - aiport_cn_01♡日本节点
+      - aiport01
+      - aiport01♡香港节点(Fallback)
+      - aiport01♡新加坡节点(Fallback)
+      - aiport01♡美国节点(Fallback)
+      - aiport01♡香港节点
+      - aiport01♡台湾节点
+      - aiport01♡新加坡节点
+      - aiport01♡美国节点
+      - aiport01♡日本节点
     use:        
-      - aiport_cn_01_Filter_All
+      - aiport01_Filter_All
 
   - name: Weibo
     type: select
     icon: https://raw.githubusercontent.com/airportchat/Logo/main/app_logo/Weibo.png
     proxies:
       - DIRECT
-      - aiport_cn_01
-      - aiport_cn_01♡香港节点(Fallback)
-      - aiport_cn_01♡新加坡节点(Fallback)
-      - aiport_cn_01♡美国节点(Fallback)
-      - aiport_cn_01♡香港节点
-      - aiport_cn_01♡台湾节点
-      - aiport_cn_01♡新加坡节点
-      - aiport_cn_01♡美国节点
-      - aiport_cn_01♡日本节点
+      - aiport01
+      - aiport01♡香港节点(Fallback)
+      - aiport01♡新加坡节点(Fallback)
+      - aiport01♡美国节点(Fallback)
+      - aiport01♡香港节点
+      - aiport01♡台湾节点
+      - aiport01♡新加坡节点
+      - aiport01♡美国节点
+      - aiport01♡日本节点
     use:        
-      - aiport_cn_01_Filter_All
+      - aiport01_Filter_All
 
   - name: Apple
     type: select
     icon: https://raw.githubusercontent.com/airportchat/Logo/main/app_logo/Apple.png
     proxies:
       - DIRECT
-      - aiport_cn_01
-      - aiport_cn_01♡香港节点(Fallback)
-      - aiport_cn_01♡新加坡节点(Fallback)
-      - aiport_cn_01♡美国节点(Fallback)
-      - aiport_cn_01♡香港节点
-      - aiport_cn_01♡台湾节点
-      - aiport_cn_01♡新加坡节点
-      - aiport_cn_01♡美国节点
-      - aiport_cn_01♡日本节点
+      - aiport01
+      - aiport01♡香港节点(Fallback)
+      - aiport01♡新加坡节点(Fallback)
+      - aiport01♡美国节点(Fallback)
+      - aiport01♡香港节点
+      - aiport01♡台湾节点
+      - aiport01♡新加坡节点
+      - aiport01♡美国节点
+      - aiport01♡日本节点
     use:        
-      - aiport_cn_01_Filter_All
+      - aiport01_Filter_All
 
   - name: Microsoft
     type: select
     icon: https://raw.githubusercontent.com/airportchat/Logo/main/app_logo/Microsoft.png
     proxies:
       - DIRECT
-      - aiport_cn_01
-      - aiport_cn_01♡香港节点(Fallback)
-      - aiport_cn_01♡新加坡节点(Fallback)
-      - aiport_cn_01♡美国节点(Fallback)
-      - aiport_cn_01♡香港节点
-      - aiport_cn_01♡台湾节点
-      - aiport_cn_01♡新加坡节点
-      - aiport_cn_01♡美国节点
-      - aiport_cn_01♡日本节点
+      - aiport01
+      - aiport01♡香港节点(Fallback)
+      - aiport01♡新加坡节点(Fallback)
+      - aiport01♡美国节点(Fallback)
+      - aiport01♡香港节点
+      - aiport01♡台湾节点
+      - aiport01♡新加坡节点
+      - aiport01♡美国节点
+      - aiport01♡日本节点
     use:        
-      - aiport_cn_01_Filter_All
+      - aiport01_Filter_All
 
   - name: Download
     type: select
     icon: https://raw.githubusercontent.com/airportchat/Logo/main/app_logo/Download.png
     proxies:
       - DIRECT
-      - aiport_cn_01
-      - aiport_cn_01♡香港节点(Fallback)
-      - aiport_cn_01♡新加坡节点(Fallback)
-      - aiport_cn_01♡美国节点(Fallback)
-      - aiport_cn_01♡香港节点
-      - aiport_cn_01♡台湾节点
-      - aiport_cn_01♡新加坡节点
-      - aiport_cn_01♡美国节点
-      - aiport_cn_01♡日本节点
+      - aiport01
+      - aiport01♡香港节点(Fallback)
+      - aiport01♡新加坡节点(Fallback)
+      - aiport01♡美国节点(Fallback)
+      - aiport01♡香港节点
+      - aiport01♡台湾节点
+      - aiport01♡新加坡节点
+      - aiport01♡美国节点
+      - aiport01♡日本节点
     use:        
-      - aiport_cn_01_Filter_All
+      - aiport01_Filter_All
 
-#aiport_cn_01部分
-  - name: aiport_cn_01♡香港节点(Fallback)
+#aiport01部分
+  - name: aiport01♡香港节点(Fallback)
     type: fallback
     icon: https://raw.githubusercontent.com/airportchat/Logo/main/app_logo/HK.png
     url: https://www.gstatic.com/generate_204
@@ -432,9 +432,9 @@ proxy-groups:
     lazy: true
     proxies:
     use:
-      - aiport_cn_01_Filter_HK
+      - aiport01_Filter_HK
 
-  - name: aiport_cn_01♡新加坡节点(Fallback)
+  - name: aiport01♡新加坡节点(Fallback)
     type: fallback
     icon: https://raw.githubusercontent.com/airportchat/Logo/main/app_logo/SG.png
     url: https://www.gstatic.com/generate_204
@@ -442,9 +442,9 @@ proxy-groups:
     lazy: true
     proxies:
     use:
-      - aiport_cn_01_Filter_SG
+      - aiport01_Filter_SG
 
-  - name: aiport_cn_01♡美国节点(Fallback)
+  - name: aiport01♡美国节点(Fallback)
     type: fallback
     icon: https://raw.githubusercontent.com/airportchat/Logo/main/app_logo/US.png
     url: https://www.gstatic.com/generate_204
@@ -452,42 +452,42 @@ proxy-groups:
     lazy: true
     proxies:
     use:
-      - aiport_cn_01_Filter_US
+      - aiport01_Filter_US
 
-  - name: aiport_cn_01♡香港节点
+  - name: aiport01♡香港节点
     type: select
     icon: https://raw.githubusercontent.com/airportchat/Logo/main/app_logo/HK.png
     proxies:
     use:
-      - aiport_cn_01_Filter_HK
+      - aiport01_Filter_HK
 
-  - name: aiport_cn_01♡台湾节点
+  - name: aiport01♡台湾节点
     type: select
     icon: https://raw.githubusercontent.com/airportchat/Logo/main/app_logo/TW.png
     proxies:
     use:
-      - aiport_cn_01_Filter_TW
+      - aiport01_Filter_TW
 
-  - name: aiport_cn_01♡新加坡节点
+  - name: aiport01♡新加坡节点
     type: select
     icon: https://raw.githubusercontent.com/airportchat/Logo/main/app_logo/SG.png
     proxies:
     use:
-      - aiport_cn_01_Filter_SG
+      - aiport01_Filter_SG
 
-  - name: aiport_cn_01♡美国节点
+  - name: aiport01♡美国节点
     type: select
     icon: https://raw.githubusercontent.com/airportchat/Logo/main/app_logo/US.png
     proxies:
     use:
-      - aiport_cn_01_Filter_US
+      - aiport01_Filter_US
 
-  - name: aiport_cn_01♡日本节点
+  - name: aiport01♡日本节点
     type: select
     icon: https://raw.githubusercontent.com/airportchat/Logo/main/app_logo/JP.png
     proxies:
     use:
-      - aiport_cn_01_Filter_JP
+      - aiport01_Filter_JP
 
 
 #远程规则集合
