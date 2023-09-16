@@ -10,6 +10,7 @@
 #取消dns中的fallback参数，YouTube等外网打开有明显的提升-2023.09.16
 
 
+
 port: 7890
 socks-port: 7891
 redir-port: 7892
@@ -32,7 +33,6 @@ dns:
   fake-ip-range: 198.18.0.1/16
   use-hosts: true
   default-nameserver:
-    - 114.114.114.114
     - 119.29.29.29
     - 223.5.5.5
   nameserver:
