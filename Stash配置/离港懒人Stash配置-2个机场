@@ -189,7 +189,7 @@ proxy-groups:
 
   - name: aiport02
     type: select
-    icon: https://raw.githubusercontent.com/airportchat/Logo/main/airport_logo/Aym.png
+    icon: https://raw.githubusercontent.com/airportchat/Logo/main/airport_logo/Amy.png
     proxies:
       - DIRECT
       - aiport02♡香港节点(Fallback)
