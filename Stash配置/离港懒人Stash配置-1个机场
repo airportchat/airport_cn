@@ -127,7 +127,6 @@ proxy-groups:
     type: select
     icon: https://raw.githubusercontent.com/airportchat/Logo/main/airport_logo/Nexitally.png
     proxies:
-      - DIRECT
       - aiport01♡香港节点(Fallback)
       - aiport01♡新加坡节点(Fallback)
       - aiport01♡美国节点(Fallback)
