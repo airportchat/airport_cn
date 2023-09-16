@@ -1,12 +1,12 @@
 #####使用前必读(不必删除必读内容)######
-#您好，这里离港懒人Clash配置模板(3个机场)，欢迎加入频道&群组和大佬们一起讨论：
+#您好，这里离港懒人Stash配置模板(4个机场)，欢迎加入频道&群组和大佬们一起讨论：
 #优质离港机场频道：https://t.me/airport_cn
 #离港vip候机室：https://t.me/airport_chat
 #规则来自blackmatrix7大佬：https://github.com/blackmatrix7/ios_rule_script/tree/master/rule
 #update：2023.09.16
 #使用方法：
 #第一步：Ctrl+A全选将此界面所有内容复制到本地用文本编辑器(记事本/Notepad++等)打开，一般是Ctrl+H组合键调出替换窗口，将“aiport01”、“aiport02”、“aiport03”、“aiport04”全部替换成你的机场名字即可！
-#第二步:将65、75、85、95行中url分别换成你的机场Clash订阅后导入即可！(特别注意：1.url的引号要保留;2.如果订阅下载不下来可以尝试在订阅后面加 &flag=clash)
+#第二步:将59、65、75、85、95行中url分别换成你的机场Stash订阅后导入即可！(特别注意：url的引号要保留)
 #update：2023.09.16
 #取消dns中的fallback参数，YouTube等外网打开有明显的提升-2023.09.16
 
@@ -55,14 +55,14 @@ dns:
     - '*.blzstatic.cn'
     - '*.battle.net'
 
-
-
+#获取机场流量套餐剩余/到期信息
+subscribe-url: "你想显示机场流量套餐剩余/到期信息的订阅"
 
 #远程订阅
 proxy-providers:
   aiport01_Subscription: &aiport01 #建立锚点
     type: http
-    url: "你的第一个机场Clash订阅"
+    url: "你的第一个机场Stash订阅"
     interval: 86400
     path: ./providers/proxy/aiport01.yaml
     health-check:
@@ -72,7 +72,7 @@ proxy-providers:
 
   aiport02_Subscription: &aiport02 #建立锚点
     type: http
-    url: "你的第二个机场Clash订阅"
+    url: "你的第二个机场Stash订阅"
     interval: 86400
     path: ./providers/proxy/aiport02.yaml
     health-check:
@@ -82,7 +82,7 @@ proxy-providers:
 
   aiport03_Subscription: &aiport03 #建立锚点
     type: http
-    url: "你的第三个机场Clash订阅"
+    url: "你的第三个机场Stash订阅"
     interval: 86400
     path: ./providers/proxy/aiport03.yaml
     health-check:
@@ -92,7 +92,7 @@ proxy-providers:
 
   aiport04_Subscription: &aiport04 #建立锚点
     type: http
-    url: "你的第四个机场Clash订阅"
+    url: "你的第四个机场Stash订阅"
     interval: 86400
     path: ./providers/proxy/aiport04.yaml
     health-check:
