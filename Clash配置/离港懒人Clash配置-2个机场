@@ -5,7 +5,7 @@
 #规则来自blackmatrix7大佬：https://github.com/blackmatrix7/ios_rule_script/tree/master/rule
 #使用方法：
 #第一步：将此界面所有代码复制到本地用文本编辑器(记事本/Notepad++等)打开，一般是Ctrl+H组合键调出替换窗口，将“离港机场名字01”和“离港机场名字02”分别全部替换成你的机场名字即可
-#第二步:将65行和75行中url换成你的机场clash订阅后导入clash即可！(特别注意：url的引号要保留)
+#第二步:将65行和75行中url换成你的机场clash订阅后导入clash即可！(特别注意：1.url的引号要保留;2.如果订阅下载不下来可以尝试在订阅后面加 &flag=clash)
 #update：2023.09.16
 port: 7890
 socks-port: 7891
