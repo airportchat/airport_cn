@@ -6,7 +6,12 @@
 #update：2023.09.16
 #使用方法：
 #第一步：Ctrl+A全选将此界面所有内容复制到本地用文本编辑器(记事本/Notepad++等)打开，一般是Ctrl+H组合键调出替换窗口，将“aiport01”、“aiport02”、“aiport03”全部替换成你的机场名字即可！
-#第二步:将63、69、79、89行中url分别换成你的机场stash订阅后导入即可！(特别注意：url的引号要保留)
+#第二步:将59、65、75、85行中url分别换成你的机场stash订阅后导入即可！(特别注意：url的引号要保留)
+#update：2023.09.16
+#取消dns中的fallback参数，YouTube等外网打开有明显的提升-2023.09.16
+
+
+
 
 port: 7890
 socks-port: 7891
@@ -30,20 +35,11 @@ dns:
   fake-ip-range: 198.18.0.1/16
   use-hosts: true
   default-nameserver:
-    - 114.114.114.114
     - 119.29.29.29
     - 223.5.5.5
   nameserver:
     - https://doh.pub/dns-query
     - https://dns.alidns.com/dns-query
-  fallback:
-    - 1.1.1.1
-    - 8.8.8.8
-  fallback-filter:
-    geoip: true
-    geoip-code: CN
-    ipcidr:
-      - 240.0.0.0/4
   fake-ip-filter:
     - '*.lan'
     - localhost.ptlogin2.qq.com
