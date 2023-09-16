@@ -214,7 +214,6 @@ proxy-groups:
     type: select
     icon: https://raw.githubusercontent.com/airportchat/Logo/main/airport_logo/Nexitally.png
     proxies:
-      - DIRECT
       - aiport01♡香港节点(Fallback)
       - aiport01♡新加坡节点(Fallback)
       - aiport01♡美国节点(Fallback)
@@ -230,7 +229,6 @@ proxy-groups:
     type: select
     icon: https://raw.githubusercontent.com/airportchat/Logo/main/airport_logo/Amy.png
     proxies:
-      - DIRECT
       - aiport02♡香港节点(Fallback)
       - aiport02♡新加坡节点(Fallback)
       - aiport02♡美国节点(Fallback)
@@ -246,7 +244,6 @@ proxy-groups:
     type: select
     icon: https://raw.githubusercontent.com/airportchat/Logo/main/airport_logo/Tag.png
     proxies:
-      - DIRECT
       - aiport03♡香港节点(Fallback)
       - aiport03♡新加坡节点(Fallback)
       - aiport03♡美国节点(Fallback)
