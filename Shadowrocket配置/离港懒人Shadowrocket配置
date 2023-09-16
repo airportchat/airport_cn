@@ -4,7 +4,7 @@
 #离港vip候机室：https://t.me/airport_chat
 #规则来自blackmatrix7大佬：https://github.com/blackmatrix7/ios_rule_script/tree/master/rule
 #使用方法：
-#1. 设置GeoLite2数据库方法：设置 - GeoLite2数据库 - 国家 - URL - 输入[https://raw.githubusercontent.com/Loyalsoldier/geoip/release/Country.mmdb]这个链接点击更新就行了1
+#1. 设置GeoLite2数据库方法：设置 - GeoLite2数据库 - 国家 - URL - 输入[https://raw.githubusercontent.com/Loyalsoldier/geoip/release/Country.mmdb]这个链接点击更新就行了
 #2. Shadowrocket添加此远程配置方法：配置 - 右上角➕ - 粘贴配置链接 - 下载 - 点击远程文件下的配置链接 - 使用配置
 #3. 设置代理分组方法：首页使劲往下滑会出现【代理分组】界面 - 在此界面设置好每个策略组需要走的分组就可以愉快的使用了
 
@@ -14,7 +14,7 @@
 # 2.手机设置 - 已下载描述文件 - 安装。
 # 3.手机设置 - 通用 - 关于本机 - 证书信任设置 - 开启对应Shadowrocket证书信任。
 
-
+#update：2023.09.16
 
 [General]
 # 旁路系统。如果禁用此选项，可能会导致一些系统问题，如推送通知延迟。
