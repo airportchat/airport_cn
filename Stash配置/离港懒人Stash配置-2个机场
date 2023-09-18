@@ -487,6 +487,32 @@ proxy-groups:
       - aiport01_Filter_All
       - aiport02_Filter_All
 
+  - name: Instagram
+    type: select
+    icon: https://raw.githubusercontent.com/airportchat/Logo/main/app_logo/Instagram.png
+    proxies:
+      - aiport01
+      - aiport02
+      - aiport01♡香港节点(Fallback)
+      - aiport01♡新加坡节点(Fallback)
+      - aiport01♡美国节点(Fallback)
+      - aiport01♡香港节点
+      - aiport01♡台湾节点
+      - aiport01♡新加坡节点
+      - aiport01♡美国节点
+      - aiport01♡日本节点
+      - aiport02♡香港节点(Fallback)
+      - aiport02♡新加坡节点(Fallback)
+      - aiport02♡美国节点(Fallback)
+      - aiport02♡香港节点
+      - aiport02♡台湾节点
+      - aiport02♡新加坡节点
+      - aiport02♡美国节点
+      - aiport02♡日本节点
+    use:        
+      - aiport01_Filter_All
+      - aiport02_Filter_All
+
   - name: TikTok
     type: select
     icon: https://raw.githubusercontent.com/airportchat/Logo/main/app_logo/TikTok.png
@@ -923,6 +949,14 @@ rule-providers:
     path: ./RuleSet/Twitter.yaml
     interval: 86400
 
+  #Instagram
+  Instagram_rule:
+    type: http
+    behavior: classical
+    url: "https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Instagram/Instagram.yaml"
+    path: ./RuleSet/Instagram.yaml
+    interval: 86400
+
   #Weibo
   Weibo_rule:
     type: http
@@ -963,6 +997,7 @@ rules:
   - RULE-SET,Spotify_rule,Spotify
 
   # 社交APP
+  - RULE-SET,Instagram_rule,Instagram
   - RULE-SET,TikTok_rule,TikTok
   - RULE-SET,Twitter_rule,Twitter
   - RULE-SET,Weibo_rule,Weibo
